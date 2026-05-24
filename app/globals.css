@@ -7525,7 +7525,7 @@ body {
 @media (max-width: 768px) {
   /* Лист 24 июля — чуть больше вниз */
   .notebook.notebook-with-texture {
-    min-height: 292px !important;
+    min-height: 278px !important;
   }
 
   .notebook-with-texture .notebook-texture-image {
@@ -7538,7 +7538,7 @@ body {
 
   /* Лист 25 июля — чуть больше вниз */
   .weekend-note.weekend-note-with-texture {
-    min-height: 330px !important;
+    min-height: 315px !important;
   }
 
   .weekend-note-with-texture .weekend-note-texture-image {
