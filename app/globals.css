@@ -1,0 +1,6765 @@
+:root {
+  --paper: #f8f0e7;
+  --paper-deep: #f2e6d7;
+  --ink: #2b2824;
+  --muted: #62594f;
+  --rose: #a9676e;
+  --berry: #9f315d;
+  --olive: #676b42;
+  --line: rgba(75, 61, 48, 0.22);
+  --shadow: rgba(38, 25, 16, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #1d1712;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.invitation-stage {
+  min-height: 100vh;
+  padding: 42px 18px 72px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 18, 14, 0.18),
+      rgba(20, 18, 14, 0.42)
+    ),
+    url("/assets/background/main-bg.png") center / cover fixed;
+}
+
+.landing-paper {
+  position: relative;
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 34px 38px 54px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.7), transparent 26%),
+    radial-gradient(circle at 80% 78%, rgba(211, 190, 158, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 30%),
+    var(--paper);
+  box-shadow: 0 28px 80px var(--shadow);
+}
+
+.small-label {
+  text-align: center;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6f6258;
+}
+
+.heart {
+  color: var(--rose);
+  text-align: center;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.decor-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  color: #6e6a5b;
+}
+
+.decor-divider::before,
+.decor-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.hero-names {
+  margin: 54px 0 32px;
+  text-align: center;
+  font-size: 72px;
+  line-height: 0.92;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--rose);
+}
+
+.hero-names span {
+  display: block;
+}
+
+.hero-names .and {
+  margin: 18px 0;
+  font-size: 43px;
+  line-height: 1;
+  font-style: italic;
+  text-transform: lowercase;
+  letter-spacing: 0;
+}
+
+.hero-date {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.hero-place {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 27px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+.couple-doodle {
+  margin: 38px auto 0;
+  width: 310px;
+  height: 210px;
+  display: block;
+}
+
+.paper-note {
+  position: relative;
+  margin: 22px auto 0;
+  width: 326px;
+  min-height: 360px;
+  padding: 42px 28px 30px;
+  background: #f4eadc;
+  transform: rotate(-2deg);
+  box-shadow: 0 18px 44px rgba(56, 38, 28, 0.22);
+}
+
+.paper-note::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #8c7865;
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.38), 0 4px 10px rgba(0, 0, 0, 0.24);
+}
+
+.paper-note-title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1;
+  font-style: italic;
+  color: var(--rose);
+}
+
+.paper-note-text {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.paper-note-text p {
+  margin: 0 0 18px;
+}
+
+.paper-note-accent {
+  color: var(--rose);
+  font-style: italic;
+  font-size: 20px;
+}
+
+.flower-sticker {
+  position: absolute;
+  pointer-events: none;
+}
+
+.flower-big-left {
+  left: -26px;
+  bottom: 12px;
+  width: 190px;
+  height: 220px;
+}
+
+.flower-top-right {
+  right: -28px;
+  top: 70px;
+  width: 118px;
+  height: 118px;
+}
+
+.flower-small-right {
+  right: -18px;
+  bottom: 58px;
+  width: 112px;
+  height: 112px;
+}
+
+.flower-shape {
+  position: absolute;
+  inset: 0;
+}
+
+.flower-shape::before {
+  content: "";
+  position: absolute;
+  left: 20%;
+  top: 5%;
+  width: 68%;
+  height: 50%;
+  background: rgba(232, 174, 185, 0.92);
+  clip-path: polygon(50% 0%, 62% 27%, 96% 13%, 72% 46%, 98% 76%, 64% 68%, 50% 100%, 36% 68%, 2% 76%, 28% 46%, 4% 13%, 38% 27%);
+  filter: drop-shadow(0 8px 16px rgba(80, 40, 45, 0.18));
+}
+
+.flower-shape::after {
+  content: "";
+  position: absolute;
+  left: 43%;
+  top: 24%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4c342f;
+}
+
+.flower-stem {
+  position: absolute;
+  left: 52%;
+  top: 50%;
+  width: 2px;
+  height: 48%;
+  background: rgba(103, 112, 75, 0.7);
+  transform: rotate(-13deg);
+}
+
+.flower-leaf {
+  position: absolute;
+  left: 54%;
+  top: 78%;
+  width: 58px;
+  height: 28px;
+  background: rgba(103, 112, 75, 0.6);
+  border-radius: 80% 0 80% 0;
+  transform: rotate(-14deg);
+}
+
+.tape {
+  position: absolute;
+  left: 60%;
+  bottom: 5%;
+  width: 88px;
+  height: 26px;
+  background: rgba(223, 196, 116, 0.72);
+  transform: rotate(-12deg);
+}
+
+.block-title {
+  margin: 0;
+  text-align: center;
+  font-size: 42px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #536043;
+}
+
+.dress-title {
+  color: #536043;
+}
+
+.block-subtitle {
+  margin: 18px auto 26px;
+  max-width: 330px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.dress-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 106px;
+  gap: 4px;
+  margin-top: 30px;
+}
+
+.dress-tile {
+  overflow: hidden;
+  background: #eee1d2;
+}
+
+.dress-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dress-tile.placeholder-1 {
+  background: linear-gradient(160deg, #bfd4e5, #f8f1e7 70%);
+}
+
+.dress-tile.placeholder-2 {
+  background: radial-gradient(circle at 30% 30%, #eebbc4, transparent 34%), linear-gradient(135deg, #e9b8c2, #f6ece2);
+}
+
+.dress-tile.placeholder-3 {
+  background: linear-gradient(130deg, #d99062, #e7b289, #e7c35f);
+}
+
+.dress-tile.placeholder-4 {
+  background: linear-gradient(180deg, #d4e4e7, #7f8a5f);
+}
+
+.dress-tile.placeholder-5 {
+  background: radial-gradient(circle at 35% 55%, #e6ca63 0 22%, transparent 23%), linear-gradient(135deg, #f6f2df, #d9e3d5);
+}
+
+.dress-tile.placeholder-6 {
+  background: linear-gradient(135deg, #f6ead9, #d6e6f0);
+}
+
+.dress-tile.placeholder-7 {
+  background: linear-gradient(135deg, #c92d65, #f0a6ba);
+}
+
+.dress-tile.placeholder-8 {
+  background: linear-gradient(135deg, #f7f0e6, #cfc1a9);
+}
+
+.dress-wide {
+  grid-column: span 2;
+}
+
+.dress-tall {
+  grid-row: span 2;
+}
+
+.palette-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.palette-item {
+  text-align: center;
+}
+
+.palette-dot {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 8px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.palette-label {
+  font-size: 12px;
+  line-height: 1.05;
+  color: var(--muted);
+}
+
+.dress-copy {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.dress-copy em {
+  font-style: italic;
+}
+
+.dress-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.notebook {
+  position: relative;
+  width: 320px;
+  margin: 42px auto 0;
+  padding: 34px 34px 30px 52px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 31px, rgba(94, 75, 58, 0.16) 32px),
+    #f5eadc;
+  box-shadow: 0 14px 38px rgba(56, 38, 28, 0.18);
+  border: 1px solid rgba(82, 63, 48, 0.12);
+  transform: rotate(-1deg);
+}
+
+.notebook::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 34px;
+  bottom: 34px;
+  width: 12px;
+  background:
+    radial-gradient(circle, rgba(133, 101, 78, 0.26) 0 5px, transparent 6px) 0 0 / 12px 44px repeat-y;
+}
+
+.notebook::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #8c7865;
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.38), 0 4px 10px rgba(0, 0, 0, 0.24);
+}
+
+.notebook-title {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4f513f;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 10px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 68px 1px 1fr;
+  gap: 18px;
+  align-items: center;
+  font-size: 16px;
+}
+
+.timeline-time {
+  text-align: right;
+}
+
+.timeline-line {
+  height: 100%;
+  min-height: 20px;
+  background: rgba(104, 81, 62, 0.32);
+}
+
+.timeline-note {
+  margin: 24px 0 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.location-image {
+  width: 100%;
+  height: 205px;
+  margin-top: 28px;
+  object-fit: cover;
+  display: block;
+}
+
+.location-coords {
+  margin: 16px 0 0;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.section-block {
+  margin-top: 42px;
+}
+
+.section-block .decor-divider {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.wishes-text {
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.wishes-text p {
+  margin: 0 0 16px;
+}
+
+.rsvp-form {
+  margin-top: 28px;
+  display: grid;
+  gap: 16px;
+  font-size: 15px;
+}
+
+.rsvp-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.rsvp-options {
+  display: flex;
+  gap: 18px;
+}
+
+.rsvp-text,
+.rsvp-select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(75, 61, 48, 0.35);
+  background: transparent;
+  padding: 4px 0;
+  color: var(--ink);
+}
+
+.rsvp-submit {
+  margin: 18px auto 0;
+  width: 220px;
+  border: none;
+  padding: 12px 20px;
+  background: #9f4e61;
+  color: #fff8ef;
+  cursor: pointer;
+}
+
+.contacts {
+  margin-top: 44px;
+  text-align: center;
+}
+
+.contacts-phone {
+  margin-top: 26px;
+  font-size: 26px;
+  letter-spacing: 0.05em;
+}
+
+.contacts-name {
+  margin-top: 8px;
+  font-size: 23px;
+  font-style: italic;
+}
+
+@media (max-width: 1100px) {
+  .invitation-stage {
+    padding: 24px 18px;
+  }
+
+  .invitation-pages {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .landing-paper {
+   width: min(100%, 430px);
+   padding: 30px 28px 44px;
+  }
+
+  .hero-names {
+    font-size: 58px;
+  }
+
+  .paper-note,
+  .notebook {
+    width: 100%;
+  }
+}
+
+.landing-paper > section {
+  position: relative;
+  margin-top: 72px;
+}
+
+.landing-paper > section:first-child {
+  margin-top: 0;
+}
+
+.landing-shell {
+  width: min(100%, 1240px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.7), transparent 26%),
+    radial-gradient(circle at 80% 78%, rgba(211, 190, 158, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 30%),
+    var(--paper);
+  box-shadow: 0 28px 80px var(--shadow);
+}
+
+.landing-section {
+  position: relative;
+  padding: 56px 70px;
+  border-bottom: 1px solid rgba(75, 61, 48, 0.14);
+}
+
+.landing-section:last-child {
+  border-bottom: none;
+}
+
+.hero-wide-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 64px;
+  align-items: center;
+  min-height: 640px;
+}
+
+.dress-timing-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(360px, 0.75fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.location-wishes-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.rsvp-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.contacts-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/* временно отключаем старую узкую бумагу, если она ещё где-то осталась */
+.landing-paper {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* на широком лендинге убираем старые огромные отступы между section */
+.landing-paper > section {
+  margin-top: 0;
+}
+
+/* адаптив: на телефоне снова одна вертикальная колонка */
+@media (max-width: 900px) {
+  .landing-shell {
+    width: min(100%, 430px);
+  }
+
+  .landing-section {
+    padding: 42px 28px;
+  }
+
+  .hero-wide-section,
+  .dress-timing-section,
+  .location-wishes-section {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+}
+
+.hero-only-section {
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-only-section > section {
+  width: 100%;
+}
+
+.intro-section {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(320px, 1.1fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.intro-letter {
+  position: relative;
+}
+
+.intro-letter .paper-note {
+  margin-top: 0;
+}
+
+.intro-letter section {
+  padding-bottom: 0 !important;
+}
+
+.intro-info {
+  max-width: 430px;
+}
+
+.intro-info h2 {
+  margin: 0 0 26px;
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #536043;
+}
+
+.intro-info h2 span {
+  color: var(--rose);
+}
+
+.intro-info p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.intro-date-card {
+  display: inline-block;
+  margin-top: 34px;
+  padding: 18px 28px;
+  background: rgba(232, 184, 193, 0.28);
+  color: #6b584a;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .intro-section {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .intro-info {
+    max-width: none;
+    text-align: center;
+  }
+
+  .intro-info h2 {
+    font-size: 32px;
+  }
+}
+
+.hero-only-section {
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-block {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(360px, 0.78fr) minmax(420px, 1.22fr);
+  gap: 96px;
+  align-items: center;
+}
+
+.hero-copy {
+  text-align: center;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.hero-heart {
+  margin-top: 18px;
+}
+
+.hero-block .hero-names {
+  margin: 42px 0 30px;
+  font-size: clamp(64px, 4.6vw, 88px);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+}
+
+.hero-block .hero-names .and {
+  margin: 16px 0 18px;
+  font-size: clamp(38px, 2.6vw, 48px);
+}
+
+.hero-block .decor-divider {
+  max-width: 260px;
+}
+
+.hero-block .hero-date {
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.hero-block .hero-place {
+  margin-top: 10px;
+  font-size: 26px;
+}
+
+.hero-doodle-wrap {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-doodle-wrap .couple-doodle {
+  width: min(100%, 520px);
+  height: auto;
+  margin: 0;
+}
+
+.hero-doodle-heart {
+  position: absolute;
+  left: 50%;
+  top: 42px;
+  transform: translateX(-50%);
+  font-size: 28px;
+}
+
+@media (max-width: 900px) {
+  .hero-only-section {
+    min-height: auto;
+  }
+
+  .hero-block {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-block .hero-names {
+    font-size: 58px;
+  }
+
+  .hero-doodle-wrap {
+    min-height: 240px;
+  }
+
+  .hero-doodle-wrap .couple-doodle {
+    width: 320px;
+  }
+}
+
+.hero-only-section.landing-section {
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+
+.hero-only-section.landing-section {
+  min-height: calc(100vh - 40px);
+  padding-top: 54px;
+  padding-bottom: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.intro-section.landing-section {
+  min-height: calc(100vh - 40px);
+  align-items: center;
+}
+
+.letter-block {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter-block .paper-note {
+  margin: 0;
+  width: min(100%, 390px);
+  min-height: 360px;
+  transform: rotate(-2deg);
+}
+
+.letter-block .flower-small-right {
+  right: -8px;
+  bottom: -36px;
+}
+
+.intro-info {
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.intro-info h2 {
+  margin: 0 0 26px;
+  font-size: clamp(34px, 3.2vw, 48px);
+  line-height: 1.08;
+  letter-spacing: 0.08em;
+}
+
+.intro-info p {
+  max-width: 420px;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.intro-date-card {
+  margin-top: 34px;
+}
+
+.intro-section.landing-section {
+  min-height: calc(100vh - 40px);
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.intro-letter {
+  display: flex;
+  justify-content: center;
+}
+
+.letter-block .paper-note {
+  width: min(100%, 430px);
+  min-height: 390px;
+  padding: 48px 34px 34px;
+}
+
+.letter-block .paper-note-title {
+  font-size: 31px;
+}
+
+.letter-block .paper-note-text {
+  font-size: 17px;
+}
+
+.intro-info h2 {
+  font-size: clamp(38px, 3.4vw, 52px);
+  line-height: 1.05;
+}
+
+.intro-info p {
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.intro-date-card {
+  padding: 20px 32px;
+  font-size: 21px;
+}
+
+.dress-timing-section.landing-section {
+  min-height: calc(100vh - 40px);
+  padding-top: 72px;
+  padding-bottom: 72px;
+  align-items: center;
+}
+
+.dress-code-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(310px, 0.82fr) minmax(420px, 1.18fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.dress-copy-column {
+  position: relative;
+  z-index: 2;
+}
+
+.dress-moodboard-column {
+  position: relative;
+  z-index: 1;
+}
+
+.dress-code-block .block-title {
+  text-align: left;
+}
+
+.dress-code-block .decor-divider {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.dress-code-block .block-subtitle {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 360px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.dress-code-block .palette-row {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 360px;
+  margin-top: 30px;
+}
+
+.dress-code-block .palette-dot {
+  width: 44px;
+  height: 44px;
+}
+
+.dress-code-block .palette-label {
+  font-size: 12px;
+}
+
+.dress-code-block .dress-copy {
+  max-width: 370px;
+  margin-top: 26px;
+  text-align: left;
+  font-size: 19px;
+}
+
+.dress-mini-divider {
+  max-width: 180px;
+}
+
+.dress-code-block .dress-footer {
+  max-width: 370px;
+  text-align: left;
+  font-size: 17px;
+}
+
+.dress-code-block .dress-grid {
+  margin-top: 0;
+  grid-auto-rows: 128px;
+  gap: 6px;
+}
+
+.dress-code-block .flower-top-right {
+  right: -48px;
+  top: -36px;
+}
+
+@media (max-width: 900px) {
+  .dress-code-block {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .dress-code-block .block-title,
+  .dress-code-block .block-subtitle,
+  .dress-code-block .dress-copy,
+  .dress-code-block .dress-footer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dress-code-block .decor-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dress-code-block .palette-row {
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dress-code-block .dress-grid {
+    grid-auto-rows: 100px;
+  }
+}
+
+.dress-timing-section.landing-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100vh - 40px);
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.dress-column {
+  min-width: 0;
+}
+
+.timing-column {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dress-code-block {
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.dress-code-block .block-title {
+  font-size: 38px;
+}
+
+.dress-code-block .block-subtitle {
+  max-width: 260px;
+  font-size: 16px;
+}
+
+.dress-code-block .palette-row {
+  max-width: 260px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.dress-code-block .palette-dot {
+  width: 38px;
+  height: 38px;
+}
+
+.dress-code-block .palette-label {
+  font-size: 11px;
+}
+
+.dress-code-block .dress-copy {
+  max-width: 270px;
+  font-size: 17px;
+}
+
+.dress-code-block .dress-footer {
+  max-width: 270px;
+  font-size: 15px;
+}
+
+.dress-code-block .dress-grid {
+  grid-auto-rows: 104px;
+  gap: 5px;
+}
+
+.timing-column .notebook {
+  width: 320px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .dress-timing-section.landing-section {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .dress-code-block {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .dress-code-block .block-title,
+  .dress-code-block .block-subtitle,
+  .dress-code-block .dress-copy,
+  .dress-code-block .dress-footer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dress-code-block .decor-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dress-code-block .palette-row {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Dress-code as a full-width landing section */
+
+.dress-section.landing-section {
+  min-height: calc(100vh - 40px);
+  padding-top: 72px;
+  padding-bottom: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.dress-section .dress-code-block {
+  width: 100%;
+  display: block;
+}
+
+.dress-header {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dress-header .block-title {
+  text-align: center;
+}
+
+.dress-header .decor-divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-header .block-subtitle {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.dress-palette-zone {
+  max-width: 820px;
+  margin: 34px auto 0;
+  text-align: center;
+}
+
+.dress-palette-zone .palette-row {
+  grid-template-columns: repeat(7, 1fr);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-palette-zone .dress-copy {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.dress-palette-zone .dress-footer {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.dress-mini-divider {
+  margin-top: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-visual-row {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.dress-moodboard-panel,
+.dress-outfit-refs-panel {
+  min-width: 0;
+}
+
+.dress-moodboard-panel .dress-grid {
+  margin-top: 0;
+  grid-auto-rows: 104px;
+  gap: 5px;
+}
+
+.dress-outfit-refs-panel {
+  position: relative;
+  min-height: 420px;
+  border: 1px dashed rgba(75, 61, 48, 0.22);
+  background: rgba(248, 240, 231, 0.48);
+}
+
+.outfit-refs-placeholder {
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: rgba(83, 96, 67, 0.72);
+}
+
+.outfit-refs-placeholder h3 {
+  margin: 0 0 14px;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.outfit-refs-placeholder p {
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+/* Timing now goes below dress-code */
+
+.timing-section.landing-section {
+  min-height: auto;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timing-section .notebook {
+  width: min(100%, 520px);
+  margin: 0 auto;
+}
+
+/* reset previous dress + timing combined section if it still exists in CSS */
+
+.dress-timing-section.landing-section {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .dress-visual-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dress-palette-zone .palette-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dress-outfit-refs-panel,
+  .outfit-refs-placeholder {
+    min-height: 280px;
+  }
+
+  .outfit-refs-placeholder {
+    padding: 28px;
+  }
+
+  .outfit-refs-placeholder h3 {
+    font-size: 26px;
+  }
+
+  .timing-section .notebook {
+    width: 100%;
+  }
+}
+
+/* Dress-code: palette and notes move under moodboard */
+
+.dress-section.landing-section {
+  min-height: calc(100vh - 40px);
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.dress-header {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.dress-header .block-subtitle {
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.dress-visual-row {
+  margin-top: 0;
+  grid-template-columns: 40% 60%;
+  gap: 36px;
+  align-items: start;
+}
+
+.dress-moodboard-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dress-moodboard-panel .dress-grid {
+  width: 100%;
+  margin-top: 0;
+  grid-auto-rows: 96px;
+  gap: 5px;
+}
+
+.dress-moodboard-panel .dress-palette-zone {
+  width: 100%;
+  max-width: none;
+  margin: 24px 0 0;
+  text-align: center;
+}
+
+.dress-moodboard-panel .palette-row {
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  max-width: none;
+  margin: 0;
+}
+
+.dress-moodboard-panel .palette-dot {
+  width: 34px;
+  height: 34px;
+}
+
+.dress-moodboard-panel .palette-label {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.dress-moodboard-panel .dress-copy {
+  max-width: 100%;
+  margin: 22px auto 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.dress-moodboard-panel .dress-footer {
+  max-width: 100%;
+  margin: 16px auto 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.dress-moodboard-panel .dress-mini-divider {
+  margin-top: 14px;
+  max-width: 160px;
+}
+
+.dress-outfit-refs-panel {
+  min-height: 520px;
+}
+
+.outfit-refs-placeholder {
+  min-height: 520px;
+}
+
+@media (max-width: 900px) {
+  .dress-visual-row {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .dress-moodboard-panel .dress-grid {
+    grid-auto-rows: 100px;
+  }
+
+  .dress-moodboard-panel .palette-row {
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 12px;
+  }
+
+  .dress-outfit-refs-panel,
+  .outfit-refs-placeholder {
+    min-height: 280px;
+  }
+}
+
+.dress-tile {
+  position: relative;
+  overflow: hidden;
+  background: #efe7da;
+}
+
+.dress-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dress-moodboard-panel {
+  max-width: 440px;
+}
+
+.dress-moodboard-panel .dress-grid {
+  grid-auto-rows: 108px;
+  gap: 4px;
+}
+
+.dress-moodboard-panel .dress-tile img {
+  filter: saturate(0.98) contrast(0.98);
+}
+
+.timing-section.landing-section {
+  min-height: calc(100vh - 40px);
+  padding-top: 72px;
+  padding-bottom: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.timing-block {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(360px, 1.05fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.timing-block .notebook {
+  width: min(100%, 500px);
+  min-height: 430px;
+  margin: 0 auto;
+  padding: 46px 48px 40px 68px;
+  transform: rotate(-1.2deg);
+}
+
+.timing-block .notebook-title {
+  font-size: 38px;
+  margin-bottom: 28px;
+}
+
+.timing-block .timeline-list {
+  gap: 14px;
+}
+
+.timing-block .timeline-item {
+  grid-template-columns: 76px 1px 1fr;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.weekend-note {
+  position: relative;
+  max-width: 500px;
+  padding: 42px 46px;
+  background: rgba(245, 234, 220, 0.72);
+  border: 1px solid rgba(75, 61, 48, 0.12);
+  box-shadow: 0 18px 44px rgba(56, 38, 28, 0.12);
+}
+
+.weekend-note::before {
+  content: "";
+  position: absolute;
+  right: 34px;
+  top: -18px;
+  width: 92px;
+  height: 30px;
+  background: rgba(223, 196, 116, 0.62);
+  transform: rotate(-8deg);
+}
+
+.weekend-kicker {
+  margin-bottom: 24px;
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #536043;
+}
+
+.weekend-note p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.weekend-small-note {
+  margin-top: 26px;
+  font-size: 17px;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .timing-section.landing-section {
+    min-height: auto;
+  }
+
+  .timing-block {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .timing-block .notebook {
+    width: 100%;
+    padding: 40px 32px 34px 54px;
+  }
+
+  .weekend-note {
+    padding: 34px 28px;
+    text-align: center;
+  }
+
+  .weekend-kicker {
+    font-size: 30px;
+  }
+}
+
+.timing-section.landing-section {
+  min-height: auto;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.timing-block {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(320px, 0.75fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.timing-block .notebook {
+  width: min(100%, 480px);
+  min-height: 340px;
+  margin: 0 auto;
+  padding: 40px 46px 34px 64px;
+  transform: rotate(-1deg);
+}
+
+.timing-block .notebook-title {
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+
+.timing-block .timeline-list {
+  gap: 10px;
+}
+
+.timing-block .timeline-item {
+  grid-template-columns: 70px 1px 1fr;
+  gap: 18px;
+  font-size: 17px;
+}
+
+.weekend-note {
+  max-width: 390px;
+  padding: 32px 36px;
+  background: rgba(245, 234, 220, 0.58);
+  border: 1px solid rgba(75, 61, 48, 0.1);
+  box-shadow: 0 14px 34px rgba(56, 38, 28, 0.1);
+}
+
+.weekend-note::before {
+  right: 28px;
+  top: -14px;
+  width: 76px;
+  height: 24px;
+}
+
+.weekend-kicker {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 1.05;
+}
+
+.weekend-note p {
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.weekend-small-note {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.weekend-note {
+  transform: rotate(0.7deg);
+}
+
+.location-wishes-section.landing-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.location-column {
+  width: 100%;
+}
+
+.location-block {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(480px, 1.18fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.location-copy {
+  max-width: 420px;
+}
+
+.location-block .block-title {
+  text-align: left;
+}
+
+.location-description {
+  margin: 26px 0 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.location-coords-card {
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: rgba(232, 184, 193, 0.22);
+  color: #6b584a;
+}
+
+.location-coords-card span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.location-coords-card strong {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+.location-map-link {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 22px;
+  background: #7a7b4b;
+  color: #fff8ef;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.location-photo-wrap {
+  position: relative;
+}
+
+.location-photo-wrap::before {
+  content: "";
+  position: absolute;
+  right: 28px;
+  top: -16px;
+  width: 100px;
+  height: 30px;
+  background: rgba(223, 196, 116, 0.62);
+  transform: rotate(-7deg);
+  z-index: 2;
+}
+
+.location-block .location-image {
+  width: 100%;
+  height: 340px;
+  margin: 0;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 18px 44px rgba(56, 38, 28, 0.16);
+}
+
+@media (max-width: 900px) {
+  .location-block {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .location-copy {
+    max-width: none;
+    text-align: center;
+  }
+
+  .location-block .block-title {
+    text-align: center;
+  }
+
+  .location-block .location-image {
+    height: 240px;
+  }
+}
+
+.wishes-column {
+  width: 100%;
+}
+
+.wishes-block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.wishes-copy-card {
+  width: min(100%, 760px);
+  padding: 38px 56px;
+  background: rgba(245, 234, 220, 0.45);
+  border: 1px solid rgba(75, 61, 48, 0.1);
+}
+
+.wishes-copy-card .block-title {
+  margin-top: 18px;
+  font-size: 38px;
+}
+
+.wishes-copy-card .wishes-text {
+  max-width: 640px;
+  margin: 24px auto 0;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.wishes-copy-card .wishes-text p:last-child {
+  margin-bottom: 0;
+}
+
+.wishes-block .flower-small-right {
+  right: 90px;
+  top: -4px;
+}
+
+@media (max-width: 900px) {
+  .wishes-copy-card {
+    padding: 32px 24px;
+  }
+
+  .wishes-block .flower-small-right {
+    right: -18px;
+    top: -20px;
+  }
+}
+
+.rsvp-section.landing-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.rsvp-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 56px;
+  align-items: center;
+}
+
+.rsvp-main {
+  min-width: 0;
+}
+
+.rsvp-main .block-title {
+  margin-top: 18px;
+  text-align: left;
+}
+
+.rsvp-main .decor-divider {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+.rsvp-form {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 42px;
+}
+
+.rsvp-field {
+  display: grid;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.rsvp-field-wide {
+  grid-column: 1 / -1;
+}
+
+.rsvp-field span {
+  display: block;
+}
+
+.rsvp-line-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(75, 61, 48, 0.36);
+  border-radius: 0;
+  background: transparent;
+  padding: 6px 0;
+  color: var(--ink);
+  outline: none;
+}
+
+.rsvp-line-input:focus {
+  border-bottom-color: var(--rose);
+}
+
+.rsvp-options {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.rsvp-options label {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.rsvp-options input {
+  accent-color: #8b8a58;
+}
+
+.rsvp-submit-card {
+  position: relative;
+  min-height: 260px;
+  padding: 42px 34px 34px;
+  background: rgba(232, 184, 193, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.rsvp-submit-card::before {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: -16px;
+  width: 88px;
+  height: 28px;
+  background: rgba(223, 196, 116, 0.62);
+  transform: rotate(-8deg);
+}
+
+.rsvp-submit-card p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #7b5656;
+}
+
+.rsvp-card-flower {
+  position: absolute;
+  right: 28px;
+  top: -34px;
+  color: #b77478;
+  font-size: 44px;
+  transform: rotate(10deg);
+}
+
+.rsvp-submit {
+  width: 100%;
+  margin-top: 28px;
+  border: none;
+  padding: 13px 20px;
+  background: #7a7b4b;
+  color: #fff8ef;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rsvp-submit:hover {
+  background: #68693f;
+}
+
+@media (max-width: 900px) {
+  .rsvp-block {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .rsvp-main .block-title,
+  .rsvp-main .decor-divider {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rsvp-form {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-submit-card {
+    text-align: center;
+  }
+}
+
+.rsvp-main .decor-divider {
+  display: none;
+}
+
+.rsvp-multiselect {
+  min-height: 92px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(75, 61, 48, 0.36);
+  color: var(--ink);
+}
+
+.rsvp-multiselect option {
+  padding: 4px 0;
+}
+
+.contacts-section.landing-section {
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+
+.contacts-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr) 320px;
+  gap: 42px;
+  align-items: center;
+}
+
+.contacts-decor {
+  position: relative;
+  min-height: 160px;
+}
+
+.contacts-decor .flower-big-left {
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 170px;
+  height: 190px;
+}
+
+.contacts-copy {
+  min-width: 0;
+}
+
+.contacts-copy .block-title {
+  text-align: left;
+  font-size: 38px;
+}
+
+.contacts-copy p {
+  max-width: 440px;
+  margin: 22px 0 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.contacts-card {
+  position: relative;
+  padding: 28px 32px;
+  background: rgba(245, 234, 220, 0.52);
+  border: 1px solid rgba(75, 61, 48, 0.1);
+  text-align: center;
+}
+
+.contacts-card::before {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: -14px;
+  width: 82px;
+  height: 24px;
+  background: rgba(223, 196, 116, 0.62);
+  transform: rotate(-8deg);
+}
+
+.contacts-card .contacts-name {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1;
+  font-style: italic;
+  color: #536043;
+}
+
+.contacts-card .contacts-phone {
+  display: block;
+  margin-top: 18px;
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.contacts-card .contacts-phone:hover {
+  color: var(--rose);
+}
+
+@media (max-width: 900px) {
+  .contacts-block {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .contacts-decor {
+    min-height: 120px;
+  }
+
+  .contacts-decor .flower-big-left {
+    left: 50%;
+    bottom: -20px;
+    transform: translateX(-50%);
+  }
+
+  .contacts-copy .block-title {
+    text-align: center;
+  }
+
+  .contacts-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contacts-card {
+    width: 100%;
+  }
+}
+
+/* Real flower assets override */
+
+.flower-sticker {
+  position: absolute;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5;
+}
+
+.flower-sticker-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  filter: drop-shadow(0 12px 18px rgba(72, 43, 38, 0.16));
+}
+
+.flower-sticker-tape {
+  position: absolute;
+  display: block;
+  width: 54%;
+  height: 15%;
+  left: 44%;
+  bottom: 7%;
+  border-radius: 2px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(232, 205, 145, 0.22),
+      rgba(232, 205, 145, 0.58) 18%,
+      rgba(250, 231, 180, 0.66) 52%,
+      rgba(232, 205, 145, 0.28)
+    );
+  box-shadow: 0 4px 10px rgba(96, 63, 38, 0.08);
+  opacity: 0.78;
+  transform: rotate(-12deg);
+  mix-blend-mode: multiply;
+}
+
+.flower-big-left .flower-sticker-image {
+  transform: rotate(-12deg) scaleX(-1);
+}
+
+.flower-big-left .flower-sticker-tape {
+  left: 49%;
+  bottom: 4%;
+  width: 46%;
+  height: 13%;
+  transform: rotate(-15deg);
+}
+
+.flower-top-right .flower-sticker-image {
+  transform: rotate(14deg) scale(0.96);
+}
+
+.flower-top-right .flower-sticker-tape {
+  left: 36%;
+  bottom: 2%;
+  width: 58%;
+  height: 16%;
+  transform: rotate(-18deg);
+}
+
+.flower-small-right .flower-sticker-image {
+  transform: rotate(18deg);
+}
+
+.flower-small-right .flower-sticker-tape {
+  left: 42%;
+  bottom: 3%;
+  width: 56%;
+  height: 15%;
+  transform: rotate(-13deg);
+}
+
+/* Old CSS-flower parts are no longer used */
+.flower-shape,
+.flower-stem,
+.flower-leaf,
+.tape {
+  display: none;
+}
+
+/* Step B.2 — real flower assets visual tuning */
+
+.flower-sticker {
+  overflow: visible;
+  pointer-events: none;
+  z-index: 8;
+}
+
+.flower-sticker-image {
+  filter: drop-shadow(0 10px 14px rgba(77, 48, 42, 0.13));
+}
+
+.flower-sticker-tape {
+  width: 46%;
+  height: 11%;
+  border-radius: 1px;
+  opacity: 0.62;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(225, 194, 128, 0.12),
+      rgba(237, 209, 148, 0.52) 20%,
+      rgba(255, 237, 188, 0.58) 52%,
+      rgba(224, 190, 118, 0.18)
+    );
+  box-shadow:
+    0 3px 8px rgba(74, 50, 35, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  mix-blend-mode: multiply;
+}
+
+/* Убираем старую CSS-графику, если где-то ещё осталась */
+.flower-shape,
+.flower-stem,
+.flower-leaf,
+.tape {
+  display: none !important;
+}
+
+/* Убираем старый декоративный цветок на RSVP-карточке */
+.rsvp-card::before,
+.rsvp-card::after,
+.rsvp-note::before,
+.rsvp-note::after,
+.rsvp-reminder::before,
+.rsvp-reminder::after,
+.rsvp-side-card::before,
+.rsvp-side-card::after {
+  display: none !important;
+}
+
+/* Чуть спокойнее сажаем цветы в бумажные блоки */
+.paper-note .flower-sticker,
+.pinned-paper .flower-sticker,
+.letter-card .flower-sticker {
+  transform: translate(4px, 6px) scale(0.92);
+}
+
+.wishes-card .flower-sticker,
+.contacts-card .flower-sticker {
+  transform: translate(2px, 4px) scale(0.94);
+}
+
+.dress-code-section .flower-sticker,
+.dress-section .flower-sticker {
+  transform: scale(0.86);
+}
+
+/* Step B.3 — exact cleanup after real flower assets */
+
+/* Убираем старый декоративный цветочек RSVP */
+.rsvp-card-flower {
+  display: none !important;
+}
+
+/* Делаем RSVP-карточку ближе к бумажному референсу */
+.rsvp-submit-card {
+  background: rgba(232, 184, 193, 0.24) !important;
+  box-shadow: 0 18px 34px rgba(78, 48, 39, 0.06);
+}
+
+/* Скотч на RSVP-карточке: меньше, светлее, менее вебовый */
+.rsvp-submit-card::before {
+  right: 28px !important;
+  top: -13px !important;
+  width: 76px !important;
+  height: 21px !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(222, 191, 121, 0.16),
+      rgba(238, 211, 145, 0.54) 35%,
+      rgba(255, 237, 185, 0.58) 62%,
+      rgba(222, 191, 121, 0.18)
+    ) !important;
+  opacity: 0.72 !important;
+  box-shadow:
+    0 4px 10px rgba(84, 57, 37, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: rotate(-7deg) !important;
+  mix-blend-mode: multiply;
+}
+
+/* Скотч на карточке контакта тоже делаем аккуратнее */
+.contacts-card::before {
+  right: 26px !important;
+  top: -12px !important;
+  width: 74px !important;
+  height: 20px !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(222, 191, 121, 0.14),
+      rgba(238, 211, 145, 0.5) 35%,
+      rgba(255, 237, 185, 0.56) 62%,
+      rgba(222, 191, 121, 0.16)
+    ) !important;
+  opacity: 0.74 !important;
+  box-shadow:
+    0 4px 10px rgba(84, 57, 37, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: rotate(-7deg) !important;
+  mix-blend-mode: multiply;
+}
+
+/* Чуть спокойнее ставим реальный цветок в контактах */
+.contacts-decor .flower-big-left {
+  left: 16px !important;
+  bottom: -18px !important;
+  width: 145px !important;
+  height: 175px !important;
+}
+
+.contacts-decor .flower-big-left .flower-sticker-image {
+  transform: rotate(-8deg) scaleX(-1) !important;
+  opacity: 0.9;
+  filter: drop-shadow(0 10px 14px rgba(77, 48, 42, 0.12)) !important;
+}
+
+.contacts-decor .flower-big-left .flower-sticker-tape {
+  left: 50% !important;
+  bottom: 6% !important;
+  width: 48% !important;
+  height: 12% !important;
+  opacity: 0.62 !important;
+  transform: rotate(-13deg) !important;
+}
+
+/* Страховка: старые CSS-части цветка больше не показываем */
+.flower-shape,
+.flower-stem,
+.flower-leaf,
+.tape {
+  display: none !important;
+}
+
+/* Step C — real tape PNG assets */
+
+/* Скотч на цветах */
+.flower-sticker-tape {
+  display: block !important;
+  position: absolute;
+  background: url("/assets/tape/tape-02-diagonal.png") center / contain no-repeat !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 0.82 !important;
+  mix-blend-mode: multiply;
+}
+
+/* Цветок в контактах — скотч чуть крупнее и ниже */
+.contacts-decor .flower-big-left .flower-sticker-tape {
+  left: 48% !important;
+  bottom: 3% !important;
+  width: 62% !important;
+  height: 18% !important;
+  transform: rotate(-12deg) !important;
+  background-image: url("/assets/tape/tape-02-diagonal.png") !important;
+}
+
+/* Общая настройка скотча на других flower-sticker */
+.flower-big-left .flower-sticker-tape,
+.flower-small-right .flower-sticker-tape,
+.flower-top-right .flower-sticker-tape {
+  width: 58% !important;
+  height: 17% !important;
+  background-image: url("/assets/tape/tape-02-diagonal.png") !important;
+}
+
+/* RSVP-карточка — реальный горизонтальный скотч */
+.rsvp-submit-card::before {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  right: 25px !important;
+  top: -15px !important;
+  width: 88px !important;
+  height: 30px !important;
+  background: url("/assets/tape/tape-01-horizontal.png") center / contain no-repeat !important;
+  opacity: 0.88 !important;
+  box-shadow: none !important;
+  transform: rotate(-6deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 4;
+}
+
+/* Карточка контакта — реальный горизонтальный скотч */
+.contacts-card::before {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  right: 24px !important;
+  top: -15px !important;
+  width: 92px !important;
+  height: 31px !important;
+  background: url("/assets/tape/tape-01-horizontal.png") center / contain no-repeat !important;
+  opacity: 0.88 !important;
+  box-shadow: none !important;
+  transform: rotate(-6deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 4;
+}
+
+/* Альтернативный мягкий скотч для бумажных элементов, если класс уже используется */
+.paper-tape,
+.note-tape,
+.card-tape {
+  background: url("/assets/tape/tape-04-soft-angle.png") center / contain no-repeat !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 0.85 !important;
+  mix-blend-mode: multiply;
+}
+
+/* Страховка: старый CSS-скотч не должен перебивать PNG */
+.tape {
+  display: none !important;
+}
+
+/* Step C.1 — tape PNG repair patch */
+
+/* Общий принцип: PNG-скотч увеличиваем и растягиваем на всю площадь контейнера,
+   потому что внутри файла есть прозрачные поля */
+
+.flower-sticker-tape {
+  display: block !important;
+  position: absolute !important;
+  background-image: url("/assets/tape/tape-02-diagonal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 0.9 !important;
+  mix-blend-mode: multiply;
+  z-index: 3;
+}
+
+/* Скотч на большом цветке */
+.flower-big-left .flower-sticker-tape {
+  left: 38% !important;
+  bottom: -1% !important;
+  width: 82% !important;
+  height: 27% !important;
+  transform: rotate(-12deg) !important;
+}
+
+/* Скотч на маленьком цветке справа */
+.flower-small-right .flower-sticker-tape {
+  left: 35% !important;
+  bottom: -2% !important;
+  width: 78% !important;
+  height: 26% !important;
+  transform: rotate(-11deg) !important;
+}
+
+/* Скотч на верхнем цветке */
+.flower-top-right .flower-sticker-tape {
+  left: 25% !important;
+  bottom: -4% !important;
+  width: 82% !important;
+  height: 28% !important;
+  transform: rotate(-15deg) !important;
+}
+
+/* Контакты: цветок + скотч поправляем отдельно */
+.contacts-decor .flower-big-left {
+  left: 8px !important;
+  bottom: -18px !important;
+  width: 170px !important;
+  height: 205px !important;
+}
+
+.contacts-decor .flower-big-left .flower-sticker-tape {
+  left: 36% !important;
+  bottom: -1% !important;
+  width: 86% !important;
+  height: 28% !important;
+  transform: rotate(-13deg) !important;
+}
+
+/* RSVP-карточка: делаем скотч заметнее и нормального размера */
+.rsvp-submit-card::before {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  right: 18px !important;
+  top: -20px !important;
+  width: 138px !important;
+  height: 46px !important;
+  background-image: url("/assets/tape/tape-01-horizontal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  opacity: 0.9 !important;
+  box-shadow: none !important;
+  transform: rotate(-6deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 5;
+}
+
+/* Карточка контакта: тоже увеличиваем */
+.contacts-card::before {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  right: 20px !important;
+  top: -20px !important;
+  width: 140px !important;
+  height: 46px !important;
+  background-image: url("/assets/tape/tape-01-horizontal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  opacity: 0.9 !important;
+  box-shadow: none !important;
+  transform: rotate(-6deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 5;
+}
+
+/* Пытаемся поймать остальные бумажные скотчи, которые могли остаться старым CSS */
+.pinned-paper::before,
+.paper-note::before,
+.timing-note::before,
+.weekend-note::before,
+.location-photo::before,
+.location-image::before,
+.location-card::before,
+.notebook-sheet::before {
+  background-image: url("/assets/tape/tape-04-soft-angle.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 0.88 !important;
+  mix-blend-mode: multiply;
+}
+
+/* Step D — real brass pin assets */
+
+.pinned-paper,
+.letter-card,
+.paper-note,
+.notebook-sheet,
+.timing-note,
+.weekend-note,
+.location-card,
+.wishes-card {
+  position: relative;
+}
+
+/* Пин на письме / бумажной записке */
+.pinned-paper::after,
+.letter-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -24px !important;
+  width: 46px !important;
+  height: 46px !important;
+  transform: translateX(-50%) rotate(-4deg) !important;
+  background: url("/assets/pins/pin-brass-01.png") center / contain no-repeat !important;
+  z-index: 12 !important;
+  pointer-events: none !important;
+}
+
+/* Пин на timing-блоке / тетрадном листе */
+.notebook-sheet::after,
+.timing-note::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -22px !important;
+  width: 42px !important;
+  height: 42px !important;
+  transform: translateX(-50%) rotate(3deg) !important;
+  background: url("/assets/pins/pin-brass-02.png") center / contain no-repeat !important;
+  z-index: 12 !important;
+  pointer-events: none !important;
+}
+
+/* Маленький пин для вторичных бумажных карточек */
+.paper-note::after,
+.weekend-note::after,
+.wishes-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -18px !important;
+  width: 34px !important;
+  height: 34px !important;
+  transform: translateX(-50%) rotate(-2deg) !important;
+  background: url("/assets/pins/pin-brass-small.png") center / contain no-repeat !important;
+  z-index: 12 !important;
+  pointer-events: none !important;
+}
+
+/* Если в location-card уже есть скотч, пин лучше не добавлять агрессивно */
+.location-card::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 34px !important;
+  top: -16px !important;
+  width: 32px !important;
+  height: 32px !important;
+  transform: rotate(5deg) !important;
+  background: url("/assets/pins/pin-brass-small.png") center / contain no-repeat !important;
+  z-index: 12 !important;
+  pointer-events: none !important;
+}
+
+/* Мобильная версия: пины чуть меньше, чтобы не давили */
+@media (max-width: 768px) {
+  .pinned-paper::after,
+  .letter-card::after {
+    width: 38px !important;
+    height: 38px !important;
+    top: -20px !important;
+  }
+
+  .notebook-sheet::after,
+  .timing-note::after {
+    width: 36px !important;
+    height: 36px !important;
+    top: -19px !important;
+  }
+
+  .paper-note::after,
+  .weekend-note::after,
+  .wishes-card::after,
+  .location-card::after {
+    width: 28px !important;
+    height: 28px !important;
+    top: -14px !important;
+  }
+}
+
+/* Step D.1 — pin repair patch */
+
+/* 1. Убираем мелкий PNG-скотч под пинами.
+   Эти элементы теперь держатся пином, скотч на них не нужен. */
+
+.pinned-paper::before,
+.letter-card::before,
+.notebook-sheet::before,
+.timing-note::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* 2. Сначала гасим лишние/непопавшие пины с прошлой попытки */
+
+.paper-note::after,
+.weekend-note::after,
+.wishes-card::after,
+.location-card::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* 3. Пин №1 — письмо / бумажная записка */
+
+.pinned-paper::after,
+.letter-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -24px !important;
+  width: 42px !important;
+  height: 42px !important;
+  transform: translateX(-50%) rotate(-4deg) !important;
+  background: url("/assets/pins/pin-brass-01.png") center / contain no-repeat !important;
+  z-index: 20 !important;
+  pointer-events: none !important;
+}
+
+/* 4. Пин №2 — тайминг / тетрадный лист */
+
+.notebook-sheet::after,
+.timing-note::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -23px !important;
+  width: 40px !important;
+  height: 40px !important;
+  transform: translateX(-50%) rotate(3deg) !important;
+  background: url("/assets/pins/pin-brass-02.png") center / contain no-repeat !important;
+  z-index: 20 !important;
+  pointer-events: none !important;
+}
+
+/* 5. Пин №3 — карточка контакта справа */
+
+.contacts-card {
+  position: relative;
+}
+
+.contacts-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -17px !important;
+  width: 34px !important;
+  height: 34px !important;
+  transform: translateX(-50%) rotate(-3deg) !important;
+  background: url("/assets/pins/pin-brass-small.png") center / contain no-repeat !important;
+  z-index: 20 !important;
+  pointer-events: none !important;
+}
+
+/* 6. Чтобы скотч на карточке контакта не спорил с пином — убираем его */
+
+.contacts-card::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .pinned-paper::after,
+  .letter-card::after {
+    top: -20px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .notebook-sheet::after,
+  .timing-note::after {
+    top: -19px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .contacts-card::after {
+    top: -14px !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* Step D.2 — restore timing pins */
+
+/* Тайминг: возвращаем пин на тетрадный/бумажный блок */
+.timing-section .notebook-sheet::after,
+.timing-block .notebook-sheet::after,
+.notebook-sheet::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -23px !important;
+  width: 42px !important;
+  height: 42px !important;
+  transform: translateX(-50%) rotate(3deg) !important;
+  background: url("/assets/pins/pin-brass-02.png") center / contain no-repeat !important;
+  z-index: 25 !important;
+  pointer-events: none !important;
+}
+
+/* Заметка рядом с таймингом: возвращаем маленький пин */
+.weekend-note::after,
+.timing-note::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -18px !important;
+  width: 34px !important;
+  height: 34px !important;
+  transform: translateX(-50%) rotate(-2deg) !important;
+  background: url("/assets/pins/pin-brass-small.png") center / contain no-repeat !important;
+  z-index: 25 !important;
+  pointer-events: none !important;
+}
+
+/* Убираем скотч именно под этими пинами, чтобы он не торчал криво */
+.notebook-sheet::before,
+.weekend-note::before,
+.timing-note::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* На мобилке уменьшаем */
+@media (max-width: 768px) {
+  .notebook-sheet::after {
+    top: -19px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .weekend-note::after,
+  .timing-note::after {
+    top: -15px !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* FINAL PIN FIX — use actual current component classes */
+
+/* 1. Base: all pinned cards must be positioning contexts */
+.paper-note,
+.notebook,
+.weekend-note,
+.contacts-card,
+.rsvp-submit-card {
+  position: relative !important;
+}
+
+/* 2. Letter paper: replace old CSS dot with real brass pin */
+.paper-note::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -22px !important;
+  width: 42px !important;
+  height: 42px !important;
+  transform: translateX(-50%) rotate(-4deg) !important;
+  background: url("/assets/pins/pin-brass-01.png") center / contain no-repeat !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  z-index: 30 !important;
+  pointer-events: none !important;
+}
+
+/* Kill duplicate pin attempts on the letter */
+.paper-note::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 3. Timing notebook: current real class is .notebook, not .notebook-sheet */
+.notebook::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -23px !important;
+  width: 42px !important;
+  height: 42px !important;
+  transform: translateX(-50%) rotate(3deg) !important;
+  background: url("/assets/pins/pin-brass-02.png") center / contain no-repeat !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  z-index: 30 !important;
+  pointer-events: none !important;
+}
+
+/* Keep notebook holes on ::before. Do not touch .notebook::before. */
+
+/* 4. Weekend note: small pin */
+.weekend-note::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -17px !important;
+  width: 32px !important;
+  height: 32px !important;
+  transform: translateX(-50%) rotate(-2deg) !important;
+  background: url("/assets/pins/pin-brass-small.png") center / contain no-repeat !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  z-index: 30 !important;
+  pointer-events: none !important;
+}
+
+/* 5. Contacts card: small pin instead of random/duplicated pseudo-elements */
+.contacts-card::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: -17px !important;
+  width: 32px !important;
+  height: 32px !important;
+  transform: translateX(-50%) rotate(-3deg) !important;
+  background: url("/assets/pins/pin-brass-small.png") center / contain no-repeat !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  z-index: 30 !important;
+  pointer-events: none !important;
+}
+
+/* 6. RSVP card: keep tape on ::before, optionally add small pin on ::after */
+.rsvp-submit-card::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 54px !important;
+  top: -14px !important;
+  width: 30px !important;
+  height: 30px !important;
+  transform: rotate(4deg) !important;
+  background: url("/assets/pins/pin-brass-small.png") center / contain no-repeat !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  z-index: 31 !important;
+  pointer-events: none !important;
+}
+
+/* 7. Make old non-existing/old classes harmless */
+.pinned-paper::after,
+.letter-card::after,
+.notebook-sheet::after,
+.timing-note::after,
+.location-card::after,
+.wishes-card::after {
+  pointer-events: none !important;
+}
+
+/* 8. Mobile: smaller pins */
+@media (max-width: 768px) {
+  .paper-note::before,
+  .notebook::after {
+    width: 34px !important;
+    height: 34px !important;
+    top: -18px !important;
+  }
+
+  .weekend-note::after,
+  .contacts-card::after,
+  .rsvp-submit-card::after {
+    width: 26px !important;
+    height: 26px !important;
+    top: -13px !important;
+  }
+}
+
+/* Remove extra pin from RSVP submit card */
+.rsvp-submit-card::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* Hero doodle image replacement */
+
+.hero-doodle-wrap {
+  position: relative;
+}
+
+.hero-doodle-wrap .couple-doodle-image {
+  display: block;
+  width: min(100%, 500px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(60, 42, 34, 0.08));
+}
+
+.hero-doodle-wrap .couple-doodle {
+  max-width: 100%;
+}
+
+.hero-doodle-heart {
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .hero-doodle-wrap .couple-doodle-image {
+    width: min(100%, 340px);
+  }
+}
+
+/* Hero composition tuning after real couple doodle */
+
+.hero-block {
+  grid-template-columns: minmax(420px, 0.9fr) minmax(420px, 1.1fr);
+  gap: 72px;
+}
+
+.hero-doodle-wrap {
+  min-height: 420px;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(26px);
+}
+
+.hero-doodle-wrap .couple-doodle-image {
+  width: min(100%, 560px);
+  filter: drop-shadow(0 10px 14px rgba(60, 42, 34, 0.06));
+}
+
+.hero-doodle-wrap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 58px;
+  width: min(78%, 480px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: rgba(75, 61, 48, 0.18);
+}
+
+.hero-doodle-heart {
+  left: 42%;
+  top: 70px;
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+.hero-doodle-wrap::before {
+  content: "family first camp";
+  position: absolute;
+  right: 8%;
+  bottom: 24px;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(98, 89, 79, 0.62);
+}
+
+@media (max-width: 900px) {
+  .hero-block {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-doodle-wrap {
+    min-height: 280px;
+    transform: none;
+  }
+
+  .hero-doodle-wrap .couple-doodle-image {
+    width: min(100%, 360px);
+  }
+
+  .hero-doodle-wrap::after {
+    bottom: 28px;
+    width: 78%;
+  }
+
+  .hero-doodle-wrap::before {
+    right: 50%;
+    bottom: 0;
+    transform: translateX(50%);
+    white-space: nowrap;
+  }
+}
+
+/* Real paper texture for letter */
+
+.paper-note-with-texture {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: 0 20px 48px rgba(56, 38, 28, 0.18);
+  overflow: visible;
+}
+
+.paper-note-with-texture .paper-texture-image {
+  position: absolute;
+  left: -28px;
+  top: -28px;
+  width: calc(100% + 56px);
+  height: calc(100% + 56px);
+  object-fit: fill;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 16px 24px rgba(56, 38, 28, 0.12));
+}
+
+.paper-note-with-texture > *:not(.paper-texture-image) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Пин должен быть выше текстуры */
+.paper-note-with-texture::before {
+  z-index: 30 !important;
+}
+
+.torn-edge {
+  display: none !important;
+}
+
+/* Remove old rectangular paper behind real PNG sheet */
+
+.paper-note.paper-note-with-texture {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+/* Shadow should belong to the PNG sheet, not to the old rectangular block */
+.paper-note-with-texture .paper-texture-image {
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 18px 26px rgba(56, 38, 28, 0.18)) !important;
+}
+
+/* Kill previous cleanup background if it was added */
+.paper-note-with-texture {
+  background: transparent !important;
+}
+
+/* FINAL timing paper texture fix */
+
+.notebook.notebook-with-texture {
+  position: relative !important;
+  width: min(100%, 500px) !important;
+  min-height: 340px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* Real paper PNG */
+.notebook-with-texture .notebook-texture-image {
+  position: absolute !important;
+  left: -24px !important;
+  top: -24px !important;
+  width: calc(100% + 48px) !important;
+  height: calc(100% + 48px) !important;
+  object-fit: fill !important;
+  display: block !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 18px 28px rgba(56, 38, 28, 0.16)) !important;
+}
+
+/* Content over PNG */
+.notebook-with-texture .notebook-inner {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 46px 54px 42px 82px !important;
+}
+
+/* Keep notebook holes from old ::before OFF when using real texture */
+.notebook-with-texture::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Keep real brass pin from ::after */
+.notebook-with-texture::after {
+  z-index: 30 !important;
+}
+
+/* Tune content inside new paper */
+.notebook-with-texture .notebook-title {
+  margin-bottom: 24px !important;
+}
+
+.notebook-with-texture .timeline-list {
+  gap: 10px !important;
+}
+
+.notebook-with-texture .timeline-item {
+  grid-template-columns: 70px 1px 1fr !important;
+  gap: 18px !important;
+  font-size: 17px !important;
+}
+
+/* Timing pin position fix after PNG paper */
+.notebook.notebook-with-texture::after {
+  left: 50% !important;
+  top: 8px !important;
+  width: 36px !important;
+  height: 36px !important;
+  transform: translateX(-50%) rotate(3deg) !important;
+  z-index: 40 !important;
+}
+
+/* FINAL TAPE SYSTEM */
+
+/* 1. Общий PNG-скотч на цветах */
+.flower-sticker-tape {
+  display: block !important;
+  position: absolute !important;
+  background-image: url("/assets/tape/tape-02-diagonal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 0.86 !important;
+  mix-blend-mode: multiply;
+  z-index: 4 !important;
+}
+
+/* 2. Большой цветок — скотч заметнее и шире */
+.flower-big-left .flower-sticker-tape {
+  left: 34% !important;
+  bottom: -2% !important;
+  width: 96px !important;
+  height: 34px !important;
+  transform: rotate(-13deg) !important;
+}
+
+/* 3. Маленький цветок — не делаем тонкую полоску */
+.flower-small-right .flower-sticker-tape {
+  left: 42% !important;
+  bottom: -3% !important;
+  width: 72px !important;
+  height: 26px !important;
+  transform: rotate(-12deg) !important;
+}
+
+/* 4. Верхний цветок — скотч чуть выше и крупнее */
+.flower-top-right .flower-sticker-tape {
+  left: 34% !important;
+  bottom: 0 !important;
+  width: 76px !important;
+  height: 28px !important;
+  transform: rotate(-15deg) !important;
+}
+
+/* 5. Цветок в contacts footer */
+.contacts-decor .flower-big-left .flower-sticker-tape {
+  left: 34% !important;
+  bottom: -2% !important;
+  width: 92px !important;
+  height: 32px !important;
+  transform: rotate(-13deg) !important;
+}
+
+/* 6. RSVP-карточка: широкий, но спокойный горизонтальный скотч */
+.rsvp-submit-card::before {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  right: 22px !important;
+  top: -18px !important;
+  width: 118px !important;
+  height: 40px !important;
+  background-image: url("/assets/tape/tape-01-horizontal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  opacity: 0.86 !important;
+  box-shadow: none !important;
+  transform: rotate(-6deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 5 !important;
+}
+
+/* 7. Contacts-card: такой же язык, но немного меньше */
+.contacts-card::before {
+  content: "" !important;
+  position: absolute !important;
+  display: block !important;
+  right: 24px !important;
+  top: -17px !important;
+  width: 112px !important;
+  height: 38px !important;
+  background-image: url("/assets/tape/tape-01-horizontal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  opacity: 0.84 !important;
+  box-shadow: none !important;
+  transform: rotate(-6deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 5 !important;
+}
+
+/* 8. Фото локации: скотч должен быть заметным, но не огромным */
+.location-photo-wrap::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 24px !important;
+  top: -18px !important;
+  width: 124px !important;
+  height: 42px !important;
+  background-image: url("/assets/tape/tape-01-horizontal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  opacity: 0.82 !important;
+  box-shadow: none !important;
+  transform: rotate(-7deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 5 !important;
+}
+
+/* 9. Weekend note: если скотч нужен, делаем его шире; если не нужен — ниже дам строку удаления */
+.weekend-note::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 28px !important;
+  top: -16px !important;
+  width: 104px !important;
+  height: 34px !important;
+  background-image: url("/assets/tape/tape-01-horizontal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  opacity: 0.78 !important;
+  box-shadow: none !important;
+  transform: rotate(-7deg) !important;
+  mix-blend-mode: multiply;
+  z-index: 5 !important;
+}
+
+/* 10. Не даём старому CSS-скотчу возвращаться */
+.tape,
+.paper-tape,
+.note-tape,
+.card-tape {
+  display: none !important;
+}
+
+/* FINAL TAPE CLEANUP — remove extra card tapes, tune flower herbarium tapes */
+
+/* 1. Убираем лишний скотч с RSVP-карточки */
+.rsvp-submit-card::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* 2. Убираем лишний скотч с карточки контактов */
+.contacts-card::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* 3. Базово: скотч остается только на flower-sticker */
+.flower-sticker-tape {
+  display: block !important;
+  position: absolute !important;
+  background-image: url("/assets/tape/tape-02-diagonal.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  opacity: 0.84 !important;
+  mix-blend-mode: multiply;
+  z-index: 6 !important;
+  pointer-events: none !important;
+}
+
+/* 4. Большой цветок: скотч шире, как гербарий */
+.flower-big-left .flower-sticker-tape {
+  left: 38% !important;
+  bottom: -2% !important;
+  width: 118px !important;
+  height: 32px !important;
+  transform: rotate(-11deg) !important;
+}
+
+/* 5. Маленький цветок справа: скотч не короткий, чуть горизонтальнее */
+.flower-small-right .flower-sticker-tape {
+  left: 34% !important;
+  bottom: -4% !important;
+  width: 92px !important;
+  height: 27px !important;
+  transform: rotate(-8deg) !important;
+}
+
+/* 6. Верхний цветок в dress-code/hero: скотч шире и чуть выше */
+.flower-top-right .flower-sticker-tape {
+  left: 24% !important;
+  bottom: -3% !important;
+  width: 104px !important;
+  height: 30px !important;
+  transform: rotate(-13deg) !important;
+}
+
+/* 7. Цветок в контактах: отдельная посадка */
+.contacts-decor .flower-big-left .flower-sticker-tape {
+  left: 34% !important;
+  bottom: -3% !important;
+  width: 116px !important;
+  height: 32px !important;
+  transform: rotate(-10deg) !important;
+}
+
+/* 8. Если цветок находится внутри письма — скотч чуть компактнее */
+.letter-block .flower-small-right .flower-sticker-tape,
+.paper-note .flower-small-right .flower-sticker-tape {
+  left: 32% !important;
+  bottom: -5% !important;
+  width: 86px !important;
+  height: 25px !important;
+  transform: rotate(-7deg) !important;
+}
+
+/* 9. Если цветок находится в dress-code — не даём ему быть тонкой полоской */
+.dress-section .flower-top-right .flower-sticker-tape {
+  left: 22% !important;
+  bottom: -4% !important;
+  width: 108px !important;
+  height: 31px !important;
+  transform: rotate(-12deg) !important;
+}
+
+/* FINAL: flower PNGs already include tape, so remove separate tape layer */
+
+.flower-sticker-tape {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* FINAL: enlarge flower PNGs with built-in tape */
+
+/* Общая страховка: картинка цветка должна занимать весь контейнер */
+.flower-sticker-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* Цветок возле письма */
+.letter-block .flower-small-right {
+  right: -34px !important;
+  bottom: -34px !important;
+  width: 158px !important;
+  height: 138px !important;
+}
+
+.letter-block .flower-small-right .flower-sticker-image {
+  left: 0 !important;
+  top: 0 !important;
+  transform: rotate(8deg) !important;
+}
+
+/* Цветок справа у dress-code */
+.dress-section .flower-top-right {
+  right: -42px !important;
+  top: 78px !important;
+  width: 156px !important;
+  height: 138px !important;
+}
+
+.dress-section .flower-top-right .flower-sticker-image {
+  left: 0 !important;
+  top: 0 !important;
+  transform: rotate(8deg) !important;
+}
+
+/* Цветок у wishes */
+.wishes-block .flower-small-right {
+  right: 44px !important;
+  top: -24px !important;
+  width: 152px !important;
+  height: 132px !important;
+}
+
+.wishes-block .flower-small-right .flower-sticker-image {
+  left: 0 !important;
+  top: 0 !important;
+  transform: rotate(7deg) !important;
+}
+
+/* Большой цветок в контактах */
+.contacts-decor .flower-big-left {
+  left: 0 !important;
+  bottom: -30px !important;
+  width: 190px !important;
+  height: 220px !important;
+}
+
+.contacts-decor .flower-big-left .flower-sticker-image {
+  left: 0 !important;
+  top: 0 !important;
+  transform: rotate(-8deg) scaleX(-1) !important;
+}
+
+/* Remove flower from Wishes block only */
+.wishes-block .flower-sticker,
+.wishes-block .flower-small-right {
+  display: none !important;
+}
+
+/* FINAL TYPOGRAPHY SYSTEM */
+
+/* Base text */
+body {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+/* Small technical labels */
+.small-label,
+.palette-label,
+.location-coords-card span,
+.hero-doodle-wrap::before {
+  font-family: var(--font-mono), "Courier New", monospace !important;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+}
+
+/* Main display headings */
+.hero-names,
+.block-title,
+.notebook-title,
+.weekend-kicker,
+.contacts-copy .block-title,
+.rsvp-main .block-title,
+.location-block .block-title {
+  font-family: var(--font-serif), Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.085em;
+}
+
+/* Hero names: closer to reference — tall, elegant, not too heavy */
+.hero-block .hero-names {
+  font-weight: 500 !important;
+  letter-spacing: 0.075em !important;
+  color: var(--rose);
+}
+
+.hero-block .hero-names .and {
+  font-family: var(--font-script), cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-transform: lowercase;
+}
+
+/* Script accents */
+.paper-note-title,
+.paper-note-accent,
+.contacts-name,
+.weekend-small-note,
+.wishes-text,
+.block-subtitle,
+.dress-footer {
+  font-family: var(--font-serif), Georgia, serif !important;
+  font-style: italic;
+}
+
+/* Make the paper greeting more like handwritten editorial text */
+.paper-note-title {
+  font-family: var(--font-script), cursive !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em;
+}
+
+/* Body text: slightly lighter and more refined */
+.paper-note-text,
+.intro-info p,
+.location-description,
+.weekend-note p,
+.rsvp-field,
+.contacts-copy p {
+  font-family: var(--font-serif), Georgia, serif !important;
+  font-weight: 500;
+}
+
+/* Buttons and form labels */
+.rsvp-submit,
+.location-map-link {
+  font-family: var(--font-serif), Georgia, serif !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Typography size tuning after font change */
+
+.block-title {
+  font-size: 46px;
+}
+
+.hero-block .hero-names {
+  font-size: clamp(72px, 5.1vw, 104px);
+}
+
+.hero-block .hero-names .and {
+  font-size: clamp(42px, 2.8vw, 56px);
+}
+
+.notebook-title {
+  font-size: 38px;
+}
+
+.rsvp-main .block-title,
+.contacts-copy .block-title,
+.location-block .block-title {
+  font-size: 44px;
+}
+
+.paper-note-title {
+  font-size: 34px;
+}
+
+/* FINAL FONT SYSTEM */
+
+body {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+/* Hero names */
+.hero-names,
+.hero-block .hero-names {
+  font-family: var(--font-names), Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.07em !important;
+  color: var(--rose);
+}
+
+/* The "и" between names */
+.hero-names .and,
+.hero-block .hero-names .and {
+  font-family: var(--font-script), cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-transform: lowercase !important;
+}
+
+/* All main headings */
+.block-title,
+.dress-title,
+.notebook-title,
+.weekend-kicker,
+.rsvp-main .block-title,
+.location-block .block-title,
+.contacts-copy .block-title,
+.wishes-copy-card .block-title {
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.08em;
+}
+
+/* Main text */
+.paper-note-text,
+.intro-info p,
+.location-description,
+.weekend-note p,
+.weekend-small-note,
+.wishes-text,
+.rsvp-field,
+.contacts-copy p,
+.dress-copy,
+.dress-footer,
+.block-subtitle {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-weight: 500;
+}
+
+/* Handwritten / soft accents */
+.paper-note-title,
+.paper-note-accent,
+.contacts-name,
+.hero-block .hero-names .and {
+  font-family: var(--font-script), cursive !important;
+  font-weight: 400 !important;
+}
+
+/* Small labels stay more technical */
+.small-label,
+.palette-label,
+.location-coords-card span,
+.hero-doodle-wrap::before {
+  font-family: "Courier New", monospace !important;
+}
+
+/* Font size tuning after final font system */
+
+.hero-block .hero-names {
+  font-size: clamp(76px, 5vw, 108px);
+  line-height: 0.9;
+}
+
+.hero-block .hero-names .and {
+  font-size: clamp(40px, 2.8vw, 56px);
+  line-height: 1;
+}
+
+.block-title {
+  font-size: 48px;
+}
+
+.notebook-title {
+  font-size: 40px;
+}
+
+.weekend-kicker {
+  font-size: 34px;
+}
+
+.rsvp-main .block-title,
+.location-block .block-title,
+.contacts-copy .block-title {
+  font-size: 46px;
+}
+
+.paper-note-title {
+  font-size: 36px;
+  line-height: 0.95;
+}
+
+.paper-note-accent {
+  font-size: 22px;
+}
+
+.block-subtitle {
+  font-size: 18px;
+}
+
+/* FINAL hero title as image */
+
+.hero-copy-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: none !important;
+}
+
+.hero-title-image {
+  display: block;
+  width: min(100%, 620px);
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* убираем возможные старые отступы от текстового hero */
+.hero-copy-image .small-label,
+.hero-copy-image .heart,
+.hero-copy-image .hero-names,
+.hero-copy-image .decor-divider,
+.hero-copy-image .hero-date,
+.hero-copy-image .hero-place {
+  display: none !important;
+}
+
+/* немного балансируем левую картинку и правый doodle */
+.hero-block {
+  grid-template-columns: minmax(440px, 0.95fr) minmax(420px, 1.05fr);
+  gap: 64px;
+}
+
+.hero-doodle-wrap .couple-doodle-image {
+  width: min(100%, 520px);
+}
+
+@media (max-width: 900px) {
+  .hero-title-image {
+    width: min(100%, 390px);
+  }
+
+  .hero-block {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+/* Dress-code palette typography cleanup */
+
+.dress-moodboard-panel .palette-label,
+.dress-palette-zone .palette-label,
+.palette-label {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 13px !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+  color: rgba(75, 61, 48, 0.82) !important;
+}
+
+/* Make palette labels less cramped */
+.dress-moodboard-panel .palette-row {
+  gap: 10px !important;
+}
+
+.dress-moodboard-panel .palette-dot {
+  margin-bottom: 7px !important;
+}
+
+/* Remove extra divider under dress-code base/accent text */
+.dress-moodboard-panel .dress-mini-divider,
+.dress-palette-zone .dress-mini-divider {
+  display: none !important;
+}
+
+/* Timing typography — more handwritten and readable */
+
+.notebook-with-texture .notebook-title {
+  font-family: var(--font-script), cursive !important;
+  font-size: 46px !important;
+  line-height: 0.95 !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  color: #3f4938 !important;
+  margin-bottom: 26px !important;
+}
+
+.notebook-with-texture .timeline-item {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 20px !important;
+  line-height: 1.18 !important;
+  gap: 22px !important;
+}
+
+.notebook-with-texture .timeline-time {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 19px !important;
+  font-weight: 600 !important;
+}
+
+.notebook-with-texture .timeline-list {
+  gap: 13px !important;
+}
+
+.notebook-with-texture .notebook-inner {
+  padding: 44px 58px 42px 92px !important;
+}
+
+/* Timing handwritten typography */
+
+.notebook-with-texture .notebook-title {
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 44px !important;
+  line-height: 0.95 !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  color: #3f4938 !important;
+  margin-bottom: 24px !important;
+}
+
+.notebook-with-texture .timeline-item,
+.notebook-with-texture .timeline-time {
+  font-family: var(--font-hand), cursive !important;
+  font-size: 25px !important;
+  line-height: 1.02 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  color: #25231f !important;
+}
+
+.notebook-with-texture .timeline-time {
+  font-weight: 600 !important;
+}
+
+.notebook-with-texture .timeline-list {
+  gap: 10px !important;
+}
+
+.notebook-with-texture .timeline-line {
+  background: rgba(104, 81, 62, 0.22) !important;
+}
+
+.notebook-with-texture .notebook-inner {
+  padding: 42px 58px 42px 92px !important;
+}
+
+/* Move timing content slightly up inside notebook paper */
+
+.notebook-with-texture .notebook-inner {
+  padding-top: 34px !important;
+  padding-bottom: 54px !important;
+}
+
+.notebook-with-texture .notebook-title {
+  margin-bottom: 20px !important;
+}
+
+.notebook-with-texture .timeline-list {
+  gap: 9px !important;
+}
+
+/* Weekend note real sticker background */
+
+.weekend-note.weekend-note-with-texture {
+  position: relative !important;
+  max-width: 430px !important;
+  min-height: 320px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.weekend-note-with-texture .weekend-note-texture-image {
+  position: absolute !important;
+  left: -24px !important;
+  top: -24px !important;
+  width: calc(100% + 48px) !important;
+  height: calc(100% + 48px) !important;
+  object-fit: fill !important;
+  display: block !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 18px 28px rgba(56, 38, 28, 0.14)) !important;
+}
+
+.weekend-note-with-texture .weekend-note-inner {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 42px 46px 38px !important;
+}
+
+/* Пин должен оставаться поверх нового PNG-фона */
+.weekend-note-with-texture::after {
+  z-index: 30 !important;
+}
+
+/* Если раньше на weekend-note был скотч через ::before — убираем */
+.weekend-note-with-texture::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Текст внутри стикера */
+.weekend-note-with-texture .weekend-kicker {
+  margin-bottom: 18px !important;
+}
+
+.weekend-note-with-texture p {
+  margin: 0 !important;
+}
+
+.weekend-note-with-texture .weekend-small-note {
+  margin-top: 20px !important;
+}
+
+/* Timing / weekend pins final placement */
+
+/* Remove pin from timing notebook */
+.notebook.notebook-with-texture::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* Move weekend pin lower */
+.weekend-note.weekend-note-with-texture::after {
+  top: 5px !important;
+  width: 34px !important;
+  height: 34px !important;
+  z-index: 40 !important;
+}
+
+/* Intro date card — controlled two-line typography */
+
+.intro-date-card {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.intro-date-line {
+  font-size: 25px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.055em !important;
+  text-transform: uppercase !important;
+  color: #7f555a !important;
+  font-variant-numeric: lining-nums;
+}
+
+.intro-place-line {
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 27px !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+  color: var(--olive) !important;
+}
+
+/* Location coordinates typography cleanup */
+
+.location-coords-card span {
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 18px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #536043 !important;
+}
+
+.location-coords-card strong {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 22px !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.035em !important;
+  font-weight: 500 !important;
+  color: #6b584a !important;
+  font-variant-numeric: lining-nums;
+}
+
+.location-coords-card {
+  padding: 22px 26px !important;
+}
+
+/* RSVP typography and checkbox cleanup */
+
+.rsvp-main .block-title {
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 48px !important;
+  letter-spacing: 0.09em !important;
+  font-weight: 400 !important;
+  color: #536043 !important;
+}
+
+.rsvp-field {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+  color: #2f2a24 !important;
+}
+
+.rsvp-field > span {
+  margin-bottom: 2px;
+}
+
+.rsvp-line-input {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  color: #2f2a24 !important;
+}
+
+.rsvp-options {
+  gap: 28px !important;
+}
+
+.rsvp-options label,
+.rsvp-checkbox-option {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+  color: #2f2a24 !important;
+}
+
+.rsvp-options input,
+.rsvp-checkbox-option input {
+  width: 15px;
+  height: 15px;
+  accent-color: #7a7b4b;
+}
+
+.rsvp-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 12px 30px;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.rsvp-checkbox-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.rsvp-multiselect {
+  display: none !important;
+}
+
+.rsvp-submit-card p {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 20px !important;
+  line-height: 1.35 !important;
+}
+
+.rsvp-submit {
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 16px !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* RSVP textured layout */
+
+.rsvp-section.landing-section {
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+
+.rsvp-block.rsvp-block-with-texture {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 360px !important;
+  gap: 72px !important;
+  align-items: center !important;
+  min-height: 620px !important;
+  padding: 72px 86px 72px 116px !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+/* Большой фон анкеты */
+.rsvp-bg-texture {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 20px 36px rgba(56, 38, 28, 0.16));
+}
+
+/* Цветок слева */
+.rsvp-left-flower {
+  position: absolute !important;
+  left: -16px !important;
+  top: 24px !important;
+  width: 170px !important;
+  height: auto !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* Контент поверх фона */
+.rsvp-main,
+.rsvp-submit-card {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Левая часть анкеты */
+.rsvp-main .block-title {
+  margin: 0 0 42px !important;
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 58px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.105em !important;
+  font-weight: 400 !important;
+  color: #536043 !important;
+  text-align: left !important;
+}
+
+.rsvp-form {
+  margin-top: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 30px 72px !important;
+}
+
+.rsvp-field {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+  color: #2f2a24 !important;
+}
+
+.rsvp-field-wide {
+  grid-column: 1 / -1 !important;
+}
+
+.rsvp-line-input {
+  height: 34px !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(75, 61, 48, 0.42) !important;
+  background: transparent !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 20px !important;
+  color: #2f2a24 !important;
+  outline: none !important;
+}
+
+.rsvp-options {
+  display: flex !important;
+  gap: 32px !important;
+  align-items: center !important;
+  margin-top: 8px !important;
+}
+
+.rsvp-options label,
+.rsvp-checkbox-option {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 20px !important;
+  line-height: 1.2 !important;
+  color: #2f2a24 !important;
+}
+
+.rsvp-options input,
+.rsvp-checkbox-option input {
+  width: 18px !important;
+  height: 18px !important;
+  accent-color: #7a7b4b !important;
+}
+
+.rsvp-checkbox-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, max-content) !important;
+  gap: 16px 64px !important;
+  margin-top: 12px !important;
+}
+
+/* Правая карточка-стикер */
+.rsvp-submit-card.rsvp-submit-card-with-texture {
+  position: relative !important;
+  width: 360px !important;
+  min-height: 420px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.rsvp-submit-sticker {
+  position: absolute !important;
+  inset: -24px !important;
+  width: calc(100% + 48px) !important;
+  height: calc(100% + 48px) !important;
+  object-fit: fill !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 18px 28px rgba(56, 38, 28, 0.18));
+}
+
+.rsvp-submit-content {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 420px !important;
+  padding: 82px 48px 56px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  text-align: center !important;
+}
+
+.rsvp-submit-card p {
+  margin: 0 !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 25px !important;
+  line-height: 1.45 !important;
+  color: #9a555f !important;
+}
+
+.rsvp-card-divider {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin: 34px 0 !important;
+  color: #b77478 !important;
+}
+
+.rsvp-card-divider::before,
+.rsvp-card-divider::after {
+  content: "" !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background: rgba(154, 85, 95, 0.28) !important;
+}
+
+.rsvp-card-divider span {
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+.rsvp-submit {
+  width: 100% !important;
+  padding: 18px 24px !important;
+  border: none !important;
+  background: #9f4256 !important;
+  color: #fff8ef !important;
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.055em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+}
+
+.rsvp-submit:hover {
+  background: #8e394c !important;
+}
+
+/* Выключаем старые псевдо-скотчи и пины у RSVP */
+.rsvp-submit-card::before,
+.rsvp-submit-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .rsvp-block.rsvp-block-with-texture {
+    grid-template-columns: 1fr !important;
+    gap: 42px !important;
+    padding: 64px 28px !important;
+  }
+
+  .rsvp-left-flower {
+    width: 120px !important;
+    left: -10px !important;
+    top: 16px !important;
+  }
+
+  .rsvp-form {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .rsvp-checkbox-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .rsvp-submit-card.rsvp-submit-card-with-texture {
+    width: min(100%, 360px) !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* RSVP textured layout */
+
+.rsvp-section.landing-section {
+  padding-top: 76px !important;
+  padding-bottom: 76px !important;
+}
+
+.rsvp-block.rsvp-block-with-texture {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 360px !important;
+  gap: 44px !important;
+  align-items: start !important;
+  min-height: 700px !important;
+  padding: 92px 88px 82px 110px !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+/* Большой фон анкеты — делаем шире */
+.rsvp-bg-texture {
+  position: absolute !important;
+  top: 24px !important;
+  bottom: 24px !important;
+  left: 18px !important;
+  right: 18px !important;
+  width: calc(100% - 36px) !important;
+  height: calc(100% - 48px) !important;
+  object-fit: fill !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 18px 30px rgba(56, 38, 28, 0.14));
+}
+
+/* Цветок слева */
+.rsvp-left-flower {
+  position: absolute !important;
+  left: 6px !important;
+  top: 56px !important;
+  width: 118px !important;
+  height: auto !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* Контент поверх фона */
+.rsvp-main,
+.rsvp-submit-card {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Левая часть анкеты */
+.rsvp-main {
+  padding-top: 18px !important;
+}
+
+.rsvp-main .block-title {
+  margin: 0 0 34px 54px !important;
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 56px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 400 !important;
+  color: #5b684b !important;
+  text-align: left !important;
+}
+
+.rsvp-form {
+  margin-top: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 26px 54px !important;
+  padding-left: 54px !important;
+  padding-right: 10px !important;
+}
+
+.rsvp-field {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+  color: #2f2a24 !important;
+}
+
+.rsvp-field > span {
+  display: block !important;
+  margin-bottom: 10px !important;
+}
+
+.rsvp-field-wide {
+  grid-column: 1 / -1 !important;
+}
+
+.rsvp-line-input {
+  width: 100% !important;
+  height: 34px !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(93, 76, 59, 0.34) !important;
+  background: transparent !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  color: #2f2a24 !important;
+  outline: none !important;
+}
+
+.rsvp-options {
+  display: flex !important;
+  gap: 28px !important;
+  align-items: center !important;
+  margin-top: 6px !important;
+}
+
+.rsvp-options label,
+.rsvp-checkbox-option {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+  color: #2f2a24 !important;
+}
+
+.rsvp-options input,
+.rsvp-checkbox-option input {
+  width: 17px !important;
+  height: 17px !important;
+  accent-color: #7a7b4b !important;
+}
+
+.rsvp-checkbox-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, max-content) !important;
+  gap: 16px 36px !important;
+  margin-top: 8px !important;
+}
+
+/* Правая карточка-стикер */
+.rsvp-submit-card.rsvp-submit-card-with-texture {
+  position: relative !important;
+  width: 350px !important;
+  min-height: 408px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  justify-self: end !important;
+  align-self: start !important;
+  margin-top: 116px !important;
+  margin-right: 12px !important;
+}
+
+/* Сам PNG-стикер */
+.rsvp-submit-sticker {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 16px 24px rgba(56, 38, 28, 0.16));
+}
+
+/* Текст и кнопка внутри */
+.rsvp-submit-content {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 408px !important;
+  padding: 62px 38px 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  text-align: center !important;
+}
+
+.rsvp-submit-card p {
+  margin: 0 !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+  color: #a05f67 !important;
+}
+
+.rsvp-card-divider {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin: 22px 0 26px !important;
+  color: #b77478 !important;
+}
+
+.rsvp-card-divider::before,
+.rsvp-card-divider::after {
+  content: "" !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background: rgba(154, 85, 95, 0.24) !important;
+}
+
+.rsvp-card-divider span {
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+.rsvp-submit {
+  width: 100% !important;
+  padding: 18px 18px !important;
+  border: none !important;
+  background: #a54f63 !important;
+  color: #fff8ef !important;
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 20px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+}
+
+.rsvp-submit:hover {
+  background: #944457 !important;
+}
+
+.rsvp-submit-card::before,
+.rsvp-submit-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .rsvp-block.rsvp-block-with-texture {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    padding: 56px 24px !important;
+    min-height: auto !important;
+  }
+
+  .rsvp-bg-texture {
+    inset: 12px !important;
+    width: calc(100% - 24px) !important;
+    height: calc(100% - 24px) !important;
+  }
+
+  .rsvp-left-flower {
+    width: 94px !important;
+    left: 4px !important;
+    top: 30px !important;
+  }
+
+  .rsvp-main .block-title {
+    margin: 0 0 26px 28px !important;
+    font-size: 42px !important;
+  }
+
+  .rsvp-form {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    padding-left: 28px !important;
+    padding-right: 12px !important;
+  }
+
+  .rsvp-checkbox-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .rsvp-submit-card.rsvp-submit-card-with-texture {
+    width: min(100%, 340px) !important;
+    margin: 10px auto 0 !important;
+  }
+}
+
+/* RSVP repair after bad sizing patch */
+
+.rsvp-block.rsvp-block-with-texture {
+  grid-template-columns: minmax(0, 1fr) 420px !important;
+  gap: 56px !important;
+  min-height: 690px !important;
+  padding: 86px 92px 82px 118px !important;
+  align-items: start !important;
+}
+
+/* делаем большую бумажную карточку шире */
+.rsvp-bg-texture {
+  top: 18px !important;
+  bottom: 18px !important;
+  left: -18px !important;
+  right: -18px !important;
+  width: calc(100% + 36px) !important;
+  height: calc(100% - 36px) !important;
+  object-fit: fill !important;
+}
+
+/* цветок чуть ближе к левому верхнему углу карточки */
+.rsvp-left-flower {
+  left: -28px !important;
+  top: 52px !important;
+  width: 132px !important;
+}
+
+/* заголовок ниже и правее, но не поверх цветка */
+.rsvp-main {
+  padding-top: 18px !important;
+}
+
+.rsvp-main .block-title {
+  margin: 0 0 36px 64px !important;
+  font-size: 56px !important;
+  line-height: 1 !important;
+}
+
+/* поля — шире, чтобы форма не была зажатой */
+.rsvp-form {
+  padding-left: 64px !important;
+  padding-right: 0 !important;
+  gap: 28px 64px !important;
+}
+
+/* правый стикер: крупнее и правее */
+.rsvp-submit-card.rsvp-submit-card-with-texture {
+  width: 390px !important;
+  min-height: 440px !important;
+  margin-top: 86px !important;
+  margin-right: -26px !important;
+  justify-self: end !important;
+}
+
+/* сам PNG-стикер не обрезаем и не растягиваем агрессивно */
+.rsvp-submit-sticker {
+  inset: -18px !important;
+  width: calc(100% + 36px) !important;
+  height: calc(100% + 36px) !important;
+  object-fit: contain !important;
+}
+
+/* текст внутри стикера — компактнее и ниже */
+.rsvp-submit-content {
+  min-height: 440px !important;
+  padding: 92px 54px 58px !important;
+  justify-content: center !important;
+}
+
+.rsvp-submit-card p {
+  font-size: 20px !important;
+  line-height: 1.45 !important;
+}
+
+.rsvp-card-divider {
+  margin: 24px 0 28px !important;
+}
+
+.rsvp-submit {
+  font-size: 19px !important;
+  padding: 17px 18px !important;
+}
+
+/* RSVP ROLLBACK — return to stable composition */
+
+.rsvp-block.rsvp-block-with-texture {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 360px !important;
+  gap: 56px !important;
+  align-items: center !important;
+  min-height: 620px !important;
+  padding: 72px 86px 72px 116px !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+/* Фон анкеты: шире, но не ломает сетку */
+.rsvp-bg-texture {
+  position: absolute !important;
+  top: -43px !important;
+  bottom: 70px !important;
+  left: 36px !important;
+  right: 36px !important;
+  width: calc(100% - -20px) !important;
+  height: calc(100% - 20px) !important;
+  object-fit: fill !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 20px 36px rgba(56, 38, 28, 0.16)) !important;
+}
+
+/* Цветок слева возвращаем ближе к первому состоянию */
+.rsvp-left-flower {
+  position: absolute !important;
+  left: 22px !important;
+  top: 52px !important;
+  width: 128px !important;
+  height: auto !important;
+  z-index: 3 !important;
+}
+
+/* Левая часть формы */
+.rsvp-main {
+  position: relative !important;
+  z-index: 2 !important;
+  padding-top: 0 !important;
+  min-width: 0 !important;
+}
+
+.rsvp-main .block-title {
+  margin: 0 0 38px 44px !important;
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 54px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.105em !important;
+  font-weight: 400 !important;
+  color: #536043 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+}
+
+/* Форму возвращаем в широкую нормальную раскладку */
+.rsvp-form {
+  margin-top: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 28px 56px !important;
+  padding-left: 44px !important;
+  padding-right: 0 !important;
+}
+
+.rsvp-field {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
+}
+
+.rsvp-field-wide {
+  grid-column: 1 / -1 !important;
+}
+
+.rsvp-line-input {
+  width: 100% !important;
+  height: 34px !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(75, 61, 48, 0.42) !important;
+  background: transparent !important;
+}
+
+/* Алкоголь */
+.rsvp-checkbox-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, max-content) !important;
+  gap: 14px 48px !important;
+  margin-top: 8px !important;
+}
+
+.rsvp-options label,
+.rsvp-checkbox-option {
+  font-size: 18px !important;
+}
+
+/* Правый стикер: возвращаем вверх и делаем спокойнее */
+.rsvp-submit-card.rsvp-submit-card-with-texture {
+  position: relative !important;
+  width: 340px !important;
+  min-height: 390px !important;
+  padding: 0 !important;
+  margin: 52px 0 0 0 !important;
+  justify-self: end !important;
+  align-self: center !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  z-index: 2 !important;
+}
+
+.rsvp-submit-sticker {
+  position: absolute !important;
+  inset: -18px !important;
+  width: calc(100% + 36px) !important;
+  height: calc(100% + 36px) !important;
+  object-fit: contain !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  filter: drop-shadow(0 18px 28px rgba(56, 38, 28, 0.18)) !important;
+}
+
+.rsvp-submit-content {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 390px !important;
+  padding: 68px 42px 44px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.rsvp-submit-card p {
+  margin: 0 !important;
+  font-size: 20px !important;
+  line-height: 1.45 !important;
+  color: #9a555f !important;
+}
+
+.rsvp-card-divider {
+  margin: 24px 0 26px !important;
+}
+
+.rsvp-submit {
+  padding: 17px 18px !important;
+  font-size: 19px !important;
+}
+
+/* Старые псевдоэлементы точно выключены */
+.rsvp-submit-card::before,
+.rsvp-submit-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* RSVP layout tuning after fixed background position */
+
+/* 1. Цветок придвигаем к листу */
+.rsvp-left-flower {
+  left: 70px !important;
+  top: 78px !important;
+  width: 122px !important;
+  z-index: 4 !important;
+}
+
+/* 2. Весь контент формы чуть сдвигаем внутрь листа */
+.rsvp-main {
+  padding-top: 8px !important;
+  padding-left: 20px !important;
+  max-width: 900px !important;
+}
+
+/* 3. Заголовок правее и чуть ниже, чтобы не висел на краю */
+.rsvp-main .block-title {
+  margin: 0 0 34px 58px !important;
+  font-size: 52px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* 4. Форму ужимаем внутрь бумажного фона */
+.rsvp-form {
+  padding-left: 55px !important;
+  padding-right: -150px !important;
+  max-width: 900px !important;
+  gap: 24px 48px !important;
+}
+
+/* 5. Нижнее поле не должно вылезать за фон */
+.rsvp-form .rsvp-field:last-child {
+  margin-top: -4px !important;
+}
+
+/* 6. Линия у последнего поля короче, чтобы не уходила вниз/вправо */
+.rsvp-form .rsvp-field:last-child .rsvp-line-input {
+  max-width: 600px !important;
+}
+
+/* 7. Стикер отправки уводим сильно правее */
+.rsvp-submit-card.rsvp-submit-card-with-texture {
+  width: 310px !important;
+  min-height: 370px !important;
+  margin-top: 80px !important;
+  margin-right: -105px !important;
+  justify-self: end !important;
+}
+
+/* 8. Сам стикер сохраняем как картинку, без агрессивного растяжения */
+.rsvp-submit-sticker {
+  inset: -14px !important;
+  width: calc(100% + 28px) !important;
+  height: calc(100% + 28px) !important;
+  object-fit: contain !important;
+}
+
+/* 9. Текст внутри стикера делаем компактнее */
+.rsvp-submit-content {
+  min-height: 370px !important;
+  padding: 56px 46px 42px !important;
+}
+
+.rsvp-submit-card p {
+  font-size: 18px !important;
+  line-height: 1.42 !important;
+}
+
+/* 10. Разделитель компактнее */
+.rsvp-card-divider {
+  margin: 18px 0 22px !important;
+}
+
+/* 11. Кнопку уменьшаем */
+.rsvp-submit {
+  width: 88% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 13px 14px !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.045em !important;
+}
+
+/* RSVP: allow form fields to use more horizontal space */
+
+.rsvp-main {
+  max-width: 800px !important;
+}
+
+.rsvp-form {
+  max-width: 750px !important;
+  grid-template-columns: minmax(270px, 1fr) minmax(300px, 1.15fr) !important;
+  gap: 12px 50px !important;
+}
+
+/* запрещаем перенос коротких подписей в правой колонке */
+.rsvp-field > span {
+  white-space: nowrap !important;
+}
+
+/* но длинную строку про сюрприз оставляем нормальной */
+.rsvp-field-wide > span {
+  white-space: normal !important;
+}
+
+/* поле питания можно сделать шире */
+.rsvp-field .rsvp-line-input {
+  min-width: 0 !important;
+}
+
+/* алкоголь тоже шире и компактнее */
+.rsvp-checkbox-grid {
+  grid-template-columns: repeat(3, max-content) !important;
+  gap: 12px 58px !important;
+}
+
+/* RSVP: stretch only background image downward */
+
+.rsvp-bg-texture {
+  height: calc(100% + 90px) !important;
+}
+
+/* RSVP submit sticker final typography/layout tuning */
+
+.rsvp-submit-content {
+  padding: 72px 48px 48px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* Текст перед кнопкой компактнее и ровнее */
+.rsvp-submit-card p {
+  max-width: 220px !important;
+  margin: 0 auto !important;
+  font-size: 17px !important;
+  line-height: 1.38 !important;
+  text-align: center !important;
+  color: #9a555f !important;
+}
+
+/* Разделитель ближе к тексту и кнопке */
+.rsvp-card-divider {
+  width: 190px !important;
+  margin: 20px auto 22px !important;
+  gap: 12px !important;
+}
+
+.rsvp-card-divider span {
+  font-size: 16px !important;
+}
+
+.rsvp-card-divider::before,
+.rsvp-card-divider::after {
+  background: rgba(154, 85, 95, 0.24) !important;
+}
+
+/* Кнопка меньше и аккуратнее */
+.rsvp-submit {
+  width: 78% !important;
+  max-width: 190px !important;
+  padding: 11px 14px !important;
+  margin: 0 auto !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+  text-align: center !important;
+}
+
+/* FINAL: remove section dividers and tighten landing rhythm */
+
+/* Убираем горизонтальные разделители между секциями */
+.landing-section {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Если где-то разделители сделаны отдельными элементами */
+.section-divider,
+.decor-divider,
+.divider,
+.block-divider {
+  display: none !important;
+}
+
+/* Делаем секции ближе друг к другу */
+.landing-section {
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+
+/* Пожелания сейчас слишком много воздуха забирают */
+.location-wishes-section.landing-section {
+  padding-top: 44px !important;
+  padding-bottom: 44px !important;
+  gap: 64px !important;
+}
+
+.wishes-block {
+  padding-top: 0 !important;
+}
+
+.wishes-copy-card {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+/* Между таймингом и адресом тоже меньше воздуха */
+.timing-section.landing-section,
+.location-section.landing-section {
+  padding-top: 52px !important;
+  padding-bottom: 52px !important;
+}
+
+/* RSVP ближе к предыдущему блоку */
+.rsvp-section.landing-section {
+  padding-top: 48px !important;
+  padding-bottom: 52px !important;
+}
+
+/* Контакты ближе к RSVP */
+.contacts-section.landing-section {
+  padding-top: 42px !important;
+  padding-bottom: 42px !important;
+}
+
+/* FINAL: tighten upper half vertical rhythm */
+
+/* 1. Hero: меньше нижнего воздуха после первого экрана */
+.hero-section.landing-section,
+.cover-section.landing-section {
+  padding-bottom: 28px !important;
+}
+
+/* Если hero живёт не через hero-section, а просто первым landing-section */
+.landing-section:first-child {
+  padding-bottom: 28px !important;
+}
+
+/* 2. Intro / letter block ближе к hero */
+.intro-section.landing-section,
+.letter-section.landing-section {
+  padding-top: 34px !important;
+  padding-bottom: 38px !important;
+}
+
+/* 3. Блок письма внутри intro — меньше воздуха вокруг */
+.letter-block {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 4. Dress-code ближе к intro */
+.dress-section.landing-section {
+  padding-top: 38px !important;
+  padding-bottom: 36px !important;
+}
+
+/* 5. Внутри dress-code тоже меньше вертикального воздуха */
+.dress-section {
+  min-height: auto !important;
+}
+
+.dress-moodboard-panel {
+  margin-top: 24px !important;
+}
+
+.dress-content,
+.dress-layout {
+  margin-top: 24px !important;
+}
+
+/* 6. Timing ближе к dress-code */
+.timing-section.landing-section {
+  padding-top: 36px !important;
+  padding-bottom: 34px !important;
+}
+
+/* 7. Timing + weekend не раздуваем по высоте */
+.timing-block {
+  align-items: center !important;
+  min-height: auto !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 8. Location ближе к timing */
+.location-section.landing-section,
+.location-wishes-section.landing-section {
+  padding-top: 38px !important;
+}
+
+/* 9. На всякий случай убираем большие min-height в верхних секциях */
+.hero-section,
+.intro-section,
+.letter-section,
+.dress-section,
+.timing-section,
+.location-section {
+  min-height: auto !important;
+}
+
+/* Move RSVP section higher */
+.rsvp-section.landing-section {
+  padding-top: 18px !important;
+}
+
+/* HERO intro animation */
+
+.hero-title-animated {
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  animation: heroTitleReveal 1.35s ease-out 0.25s forwards;
+  will-change: opacity, transform;
+}
+
+.couple-doodle-animated {
+  opacity: 0;
+  transform: translateY(14px) scale(0.99);
+  animation: heroDoodleReveal 1.05s ease-out 1.05s forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes heroTitleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    filter: blur(4px);
+  }
+
+  55% {
+    opacity: 0.78;
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroDoodleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.99);
+    filter: blur(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-animated,
+  .couple-doodle-animated {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+}
+
+/* Scroll reveal animation for landing sections */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 900ms ease,
+    transform 900ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Пока блок скрыт, он всё равно занимает место в layout */
+.reveal-on-scroll > .landing-section {
+  opacity: inherit;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Scroll reveal animation for real landing sections */
+
+.reveal-on-scroll {
+  opacity: 0 !important;
+  transform: translateY(34px) !important;
+  transition:
+    opacity 1000ms ease,
+    transform 1000ms ease !important;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Важно: дети не должны перебивать opacity родителя */
+.reveal-on-scroll > .landing-section {
+  opacity: 1 !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* STAGED REVEAL SYSTEM v1 */
+
+/* Базовый reveal контейнера секции */
+.reveal-on-scroll {
+  --reveal-duration: 1100ms;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  opacity: 0 !important;
+  transform: translateY(32px) !important;
+  transition:
+    opacity 900ms ease,
+    transform 1100ms var(--reveal-ease) !important;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Внутренние слои секции */
+.reveal-on-scroll .landing-section > * {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity var(--reveal-duration) ease,
+    transform var(--reveal-duration) var(--reveal-ease);
+  will-change: opacity, transform;
+}
+
+/* Когда секция открылась — слои начинают проявляться */
+.reveal-on-scroll.is-visible .landing-section > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger для прямых детей секции */
+.reveal-on-scroll.is-visible .landing-section > *:nth-child(1) {
+  transition-delay: 80ms;
+}
+
+.reveal-on-scroll.is-visible .landing-section > *:nth-child(2) {
+  transition-delay: 220ms;
+}
+
+.reveal-on-scroll.is-visible .landing-section > *:nth-child(3) {
+  transition-delay: 360ms;
+}
+
+.reveal-on-scroll.is-visible .landing-section > *:nth-child(4) {
+  transition-delay: 500ms;
+}
+
+/* Дополнительные классы для будущих точечных анимаций */
+.reveal-layer {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1100ms ease,
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.is-visible .reveal-layer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 120ms !important;
+}
+
+.reveal-delay-2 {
+  transition-delay: 260ms !important;
+}
+
+.reveal-delay-3 {
+  transition-delay: 420ms !important;
+}
+
+.reveal-delay-4 {
+  transition-delay: 580ms !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll .landing-section > *,
+  .reveal-layer {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* RSVP staged reveal animation */
+
+.rsvp-anim-paper,
+.rsvp-anim-flower,
+.rsvp-anim-form,
+.rsvp-anim-sticker,
+.rsvp-anim-button {
+  transition:
+    opacity 1100ms ease,
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1200ms ease !important;
+  will-change: opacity, transform, filter;
+}
+
+/* Initial hidden states */
+.reveal-on-scroll:not(.is-visible) .rsvp-anim-paper {
+  opacity: 0 !important;
+  transform: translateY(26px) scale(0.985) !important;
+  filter: blur(3px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .rsvp-anim-flower {
+  opacity: 0 !important;
+  transform: translateY(18px) rotate(-6deg) scale(0.94) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .rsvp-anim-form {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .rsvp-anim-sticker {
+  opacity: 0 !important;
+  transform: translateY(30px) rotate(-1.5deg) scale(0.96) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .rsvp-anim-button {
+  opacity: 0 !important;
+  transform: translateY(8px) scale(0.96) !important;
+}
+
+/* Visible states with stagger */
+.reveal-on-scroll.is-visible .rsvp-anim-paper {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 80ms !important;
+}
+
+.reveal-on-scroll.is-visible .rsvp-anim-flower {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 260ms !important;
+}
+
+.reveal-on-scroll.is-visible .rsvp-anim-form {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+  transition-delay: 420ms !important;
+}
+
+.reveal-on-scroll.is-visible .rsvp-anim-sticker {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 620ms !important;
+}
+
+.reveal-on-scroll.is-visible .rsvp-anim-button {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  transition-delay: 880ms !important;
+}
+
+/* Button hover microinteraction */
+.rsvp-submit {
+  transition:
+    background 260ms ease,
+    transform 260ms ease,
+    box-shadow 260ms ease !important;
+}
+
+.rsvp-submit:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 18px rgba(80, 38, 46, 0.16) !important;
+}
+
+.rsvp-submit:active {
+  transform: translateY(0) scale(0.99) !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .rsvp-anim-paper,
+  .rsvp-anim-flower,
+  .rsvp-anim-form,
+  .rsvp-anim-sticker,
+  .rsvp-anim-button {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Timing staged reveal animation */
+
+.timing-anim-paper,
+.timing-anim-weekend,
+.timing-anim-row {
+  transition:
+    opacity 1100ms ease,
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1200ms ease !important;
+  will-change: opacity, transform, filter;
+}
+
+/* Initial hidden states */
+.reveal-on-scroll:not(.is-visible) .timing-anim-paper {
+  opacity: 0 !important;
+  transform: translateY(28px) rotate(-1deg) scale(0.985) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .timing-anim-row {
+  opacity: 0 !important;
+  transform: translateX(-12px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .timing-anim-weekend {
+  opacity: 0 !important;
+  transform: translateY(30px) rotate(1deg) scale(0.97) !important;
+  filter: blur(2px) !important;
+}
+
+/* Visible states */
+.reveal-on-scroll.is-visible .timing-anim-paper {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 80ms !important;
+}
+
+.reveal-on-scroll.is-visible .timing-anim-row {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition-delay: calc(260ms + var(--row-index, 0) * 90ms) !important;
+}
+
+.reveal-on-scroll.is-visible .timing-anim-weekend {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 820ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timing-anim-paper,
+  .timing-anim-weekend,
+  .timing-anim-row {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Intro staged reveal animation */
+
+.intro-anim-letter,
+.intro-anim-flower,
+.intro-anim-info,
+.intro-anim-date {
+  transition:
+    opacity 1100ms ease,
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1200ms ease !important;
+  will-change: opacity, transform, filter;
+}
+
+/* Initial hidden states */
+.reveal-on-scroll:not(.is-visible) .intro-anim-letter {
+  opacity: 0 !important;
+  transform: translateY(28px) rotate(-1deg) scale(0.985) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .intro-anim-flower {
+  opacity: 0 !important;
+  transform: translateY(18px) rotate(-5deg) scale(0.94) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .intro-anim-info {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .intro-anim-date {
+  opacity: 0 !important;
+  transform: translateY(14px) scale(0.98) !important;
+}
+
+/* Visible states */
+.reveal-on-scroll.is-visible .intro-anim-letter {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 80ms !important;
+}
+
+.reveal-on-scroll.is-visible .intro-anim-flower {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 260ms !important;
+}
+
+.reveal-on-scroll.is-visible .intro-anim-info {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+  transition-delay: 360ms !important;
+}
+
+.reveal-on-scroll.is-visible .intro-anim-date {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  transition-delay: 560ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-anim-letter,
+  .intro-anim-flower,
+  .intro-anim-info,
+  .intro-anim-date {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Intro flower animation fix — wrapper must not affect layout */
+
+.intro-anim-flower {
+  display: contents !important;
+}
+
+/* Animate actual flower sticker, not wrapper */
+.intro-anim-flower .flower-sticker {
+  transition:
+    opacity 1100ms ease,
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1200ms ease !important;
+  will-change: opacity, transform, filter;
+}
+
+.reveal-on-scroll:not(.is-visible) .intro-anim-flower .flower-sticker {
+  opacity: 0 !important;
+  transform: translateY(18px) rotate(-5deg) scale(0.94) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll.is-visible .intro-anim-flower .flower-sticker {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 260ms !important;
+}
+
+/* Location button hover microinteraction */
+
+.location-map-link {
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease,
+    letter-spacing 260ms ease !important;
+}
+
+.location-map-link:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 18px rgba(75, 82, 46, 0.16) !important;
+  letter-spacing: 0.095em !important;
+}
+
+.location-map-link:active {
+  transform: translateY(0) scale(0.99) !important;
+  box-shadow: 0 5px 10px rgba(75, 82, 46, 0.12) !important;
+}
+
+/* Subtle breathing for decor elements */
+
+.flower-sticker,
+.rsvp-left-flower,
+.contacts-decor,
+.paper-note-with-texture::before,
+.weekend-note-with-texture::after,
+.contacts-card::after {
+  animation: decorSoftBreath 7.5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.flower-top-right,
+.dress-section .flower-top-right {
+  animation-delay: 1.2s;
+}
+
+.rsvp-left-flower {
+  animation-delay: 0.8s;
+}
+
+.contacts-decor {
+  animation-delay: 1.8s;
+}
+
+@keyframes decorSoftBreath {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-3px) rotate(0.35deg) scale(1.006);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flower-sticker,
+  .rsvp-left-flower,
+  .contacts-decor,
+  .paper-note-with-texture::before,
+  .weekend-note-with-texture::after,
+  .contacts-card::after {
+    animation: none !important;
+  }
+}
+
+/* Dress-code staged reveal — actual component classes */
+
+.dress-anim-flower {
+  display: contents !important;
+}
+
+.dress-anim-flower .flower-sticker,
+.dress-anim-header,
+.dress-anim-moodboard,
+.dress-anim-palette,
+.dress-anim-reference {
+  transition:
+    opacity 1100ms ease,
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1200ms ease !important;
+  will-change: opacity, transform, filter;
+}
+
+/* Initial hidden states */
+.reveal-on-scroll:not(.is-visible) .dress-anim-header {
+  opacity: 0 !important;
+  transform: translateY(22px) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .dress-anim-moodboard {
+  opacity: 0 !important;
+  transform: translateY(30px) scale(0.985) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .dress-anim-palette {
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .dress-anim-reference {
+  opacity: 0 !important;
+  transform: translateY(32px) scale(0.985) !important;
+  filter: blur(2px) !important;
+}
+
+.reveal-on-scroll:not(.is-visible) .dress-anim-flower .flower-sticker {
+  opacity: 0 !important;
+  transform: translateY(16px) rotate(-4deg) scale(0.94) !important;
+  filter: blur(2px) !important;
+}
+
+/* Visible states */
+.reveal-on-scroll.is-visible .dress-anim-header {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+  transition-delay: 80ms !important;
+}
+
+.reveal-on-scroll.is-visible .dress-anim-moodboard {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 260ms !important;
+}
+
+.reveal-on-scroll.is-visible .dress-anim-palette {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition-delay: 480ms !important;
+}
+
+.reveal-on-scroll.is-visible .dress-anim-reference {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 620ms !important;
+}
+
+.reveal-on-scroll.is-visible .dress-anim-flower .flower-sticker {
+  opacity: 1 !important;
+  transform: translateY(0) rotate(0) scale(1) !important;
+  filter: blur(0) !important;
+  transition-delay: 760ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dress-anim-flower .flower-sticker,
+  .dress-anim-header,
+  .dress-anim-moodboard,
+  .dress-anim-palette,
+  .dress-anim-reference {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Subtle ambient parallax imitation */
+
+.rsvp-left-flower,
+.flower-sticker,
+.location-photo-wrap::before,
+.dress-section .flower-top-right {
+  will-change: transform;
+}
+
+.dress-section .flower-top-right {
+  animation: decorSlowFloat 10s ease-in-out infinite;
+}
+
+.location-photo-wrap::before {
+  animation: tapeSlowFloat 9s ease-in-out infinite;
+}
+
+@keyframes decorSlowFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
+}
+
+@keyframes tapeSlowFloat {
+  0%,
+  100% {
+    transform: rotate(-7deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-6deg) translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dress-section .flower-top-right,
+  .location-photo-wrap::before {
+    animation: none !important;
+  }
+}
+
+/* RSVP alcohol accordion */
+
+.rsvp-alcohol-field {
+  margin-top: -2px !important;
+}
+
+.rsvp-alcohol-accordion {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px 20px !important;
+  margin-top: 6px !important;
+  max-width: 760px !important;
+}
+
+.rsvp-alcohol-group {
+  border-bottom: 1px solid rgba(75, 61, 48, 0.28) !important;
+  padding-bottom: 5px !important;
+}
+
+.rsvp-alcohol-group summary {
+  cursor: pointer !important;
+  list-style: none !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 17px !important;
+  line-height: 1.2 !important;
+  color: #2f2a24 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.rsvp-alcohol-group summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.rsvp-alcohol-group summary::after {
+  content: "⌄" !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  color: rgba(75, 61, 48, 0.62) !important;
+  transform: translateY(-1px) !important;
+}
+
+.rsvp-alcohol-group[open] summary::after {
+  content: "⌃" !important;
+}
+
+.rsvp-alcohol-options {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  padding-top: 8px !important;
+  padding-bottom: 2px !important;
+}
+
+.rsvp-alcohol-options .rsvp-checkbox-option,
+.rsvp-no-alcohol-option {
+  font-size: 16px !important;
+  line-height: 1.15 !important;
+}
+
+.rsvp-no-alcohol-option {
+  align-self: end !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  border-bottom: 1px solid rgba(75, 61, 48, 0.28) !important;
+}
+
+.rsvp-alcohol-options input,
+.rsvp-no-alcohol-option input {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+/* RSVP submit button submitted state */
+
+.rsvp-submit.is-submitted,
+.rsvp-submit:disabled {
+  background: #7a7b4b !important;
+  color: #fff8ef !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  opacity: 0.86 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.rsvp-submit.is-submitted:hover,
+.rsvp-submit:disabled:hover {
+  background: #7a7b4b !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Contacts final two-person layout */
+
+.contacts-card {
+  min-width: 360px !important;
+  padding: 32px 42px 34px !important;
+  text-align: center !important;
+}
+
+.contacts-agency {
+  font-family: var(--font-script), cursive !important;
+  font-size: 27px !important;
+  line-height: 1 !important;
+  color: #536043 !important;
+  margin-bottom: 16px !important;
+}
+
+.contacts-list {
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.contacts-person {
+  display: grid !important;
+  gap: 4px !important;
+}
+
+.contacts-name {
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  color: #536043 !important;
+}
+
+.contacts-phone {
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 21px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.055em !important;
+  color: #2f2a24 !important;
+  text-decoration: none !important;
+  font-variant-numeric: lining-nums;
+}
+
+.contacts-phone:hover {
+  color: #9a555f !important;
+}
+
+/* Hero doodle mini slideshow */
+
+.couple-doodle-slideshow {
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 1.45 / 1;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 14px rgba(60, 42, 34, 0.06));
+}
+
+.couple-doodle-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: coupleDoodleSlideshow 6.4s infinite;
+  will-change: opacity;
+}
+
+/* 4 кадра по очереди */
+.couple-doodle-frame-1 {
+  animation-delay: 0s;
+}
+
+.couple-doodle-frame-2 {
+  animation-delay: 1.6s;
+}
+
+.couple-doodle-frame-3 {
+  animation-delay: 3.2s;
+}
+
+.couple-doodle-frame-4 {
+  animation-delay: 4.8s;
+}
+
+@keyframes coupleDoodleSlideshow {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  23% {
+    opacity: 1;
+  }
+
+  28% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* сохраняем стартовую hero-анимацию для всего слайдшоу */
+.couple-doodle-animated.couple-doodle-slideshow {
+  opacity: 0;
+  transform: translateY(14px) scale(0.99);
+  animation:
+    heroDoodleReveal 1.45s ease-out 1.55s forwards;
+}
+
+/* после появления контейнера кадры работают внутри */
+.couple-doodle-animated.couple-doodle-slideshow .couple-doodle-frame {
+  animation-name: coupleDoodleSlideshow;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .couple-doodle-slideshow {
+    width: min(100%, 360px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .couple-doodle-frame {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+
+  .couple-doodle-frame-1 {
+    opacity: 1 !important;
+  }
+
+  .couple-doodle-animated.couple-doodle-slideshow {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* MOBILE FIX: timing + weekend block */
+
+@media (max-width: 768px) {
+  .timing-section.landing-section {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .timing-block {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    align-items: center !important;
+    justify-items: center !important;
+    width: 100% !important;
+    padding: 0 18px !important;
+  }
+
+  .notebook.notebook-with-texture {
+    width: min(100%, 360px) !important;
+    min-height: 300px !important;
+    transform: none !important;
+    margin: 0 auto !important;
+  }
+
+  .notebook-with-texture .notebook-texture-image {
+    left: -16px !important;
+    top: -16px !important;
+    width: calc(100% + 32px) !important;
+    height: calc(100% + 32px) !important;
+    object-fit: fill !important;
+  }
+
+  .notebook-with-texture .notebook-inner {
+    padding: 36px 34px 36px 62px !important;
+  }
+
+  .notebook-with-texture .notebook-title {
+    font-size: 34px !important;
+    line-height: 0.95 !important;
+    margin-bottom: 16px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  .notebook-with-texture .timeline-list {
+    gap: 6px !important;
+  }
+
+  .notebook-with-texture .timeline-item {
+    grid-template-columns: 54px 1px 1fr !important;
+    gap: 12px !important;
+    font-size: 21px !important;
+    line-height: 1 !important;
+  }
+
+  .notebook-with-texture .timeline-time {
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  .weekend-note.weekend-note-with-texture {
+    display: block !important;
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+    min-height: 270px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-texture-image {
+    left: -16px !important;
+    top: -16px !important;
+    width: calc(100% + 32px) !important;
+    height: calc(100% + 32px) !important;
+    object-fit: fill !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-inner {
+    padding: 38px 34px 34px !important;
+  }
+
+  .weekend-note-with-texture .weekend-kicker {
+    font-size: 30px !important;
+    line-height: 1 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .weekend-note-with-texture p {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+  }
+
+  .weekend-note-with-texture .weekend-small-note {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    margin-top: 14px !important;
+  }
+
+  .weekend-note.weekend-note-with-texture::after {
+    top: -6px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+}
+
+/* MOBILE FIX v2: enlarge timing + weekend cards */
+
+@media (max-width: 768px) {
+  /* Лист тайминга крупнее */
+  .notebook.notebook-with-texture {
+    width: min(100%, 420px) !important;
+    min-height: 360px !important;
+  }
+
+  .notebook-with-texture .notebook-texture-image {
+    left: -20px !important;
+    top: -20px !important;
+    width: calc(100% + 40px) !important;
+    height: calc(100% + 40px) !important;
+  }
+
+  .notebook-with-texture .notebook-inner {
+    padding: 42px 38px 42px 70px !important;
+  }
+
+  .notebook-with-texture .notebook-title {
+    font-size: 38px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .notebook-with-texture .timeline-item {
+    grid-template-columns: 42px 1px 1fr !important;
+    gap: 14px !important;
+    font-size: 20px !important;
+    line-height: 1.02 !important;
+  }
+
+  .notebook-with-texture .timeline-time {
+    font-size: 20px !important;
+  }
+
+  /* Чтобы последняя строка не прилипала к низу */
+  .notebook-with-texture .timeline-list {
+    gap: 7px !important;
+  }
+
+  /* Стикер "Наш уикенд" крупнее */
+  .weekend-note.weekend-note-with-texture {
+    width: min(100%, 390px) !important;
+    max-width: 390px !important;
+    min-height: 400px !important;
+    margin: 10px auto 0 !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-texture-image {
+    left: -20px !important;
+    top: -80px !important;
+    width: calc(100% + 40px) !important;
+    height: calc(100% + 40px) !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-inner {
+    padding: 28px 42px 44px !important;
+  }
+
+  .weekend-note-with-texture .weekend-kicker {
+    font-size: 24px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .weekend-note-with-texture p {
+    font-size: 18px !important;
+    line-height: 1.38 !important;
+  }
+
+  .weekend-note-with-texture .weekend-small-note {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    margin-top: 18px !important;
+  }
+
+  /* Пин уикенда — центрируем по верхнему краю стикера */
+  .weekend-note.weekend-note-with-texture::after {
+    left: 50% !important;
+    top: -14px !important;
+    width: 32px !important;
+    height: 32px !important;
+    transform: translateX(-50%) rotate(3deg) !important;
+    z-index: 40 !important;
+  }
+}
+
+/* MOBILE: stretch only weekend sticker background downward */
+
+@media (max-width: 768px) {
+  .weekend-note-with-texture .weekend-note-texture-image {
+    height: calc(100% + 110px) !important;
+  }
+}
+
+/* MOBILE: reduce gap between Weekend and Location */
+
+@media (max-width: 768px) {
+  .timing-section.landing-section {
+    padding-bottom: 12px !important;
+  }
+
+  .location-wishes-section.landing-section,
+  .location-section.landing-section {
+    padding-top: 12px !important;
+  }
+}
+
+/* MOBILE: RSVP full adaptation */
+
+@media (max-width: 768px) {
+  .rsvp-section.landing-section {
+    padding-top: 24px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .rsvp-block.rsvp-block-with-texture {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 58px 26px 58px !important;
+    overflow: visible !important;
+  }
+
+  /* Фоновый лист анкеты превращаем в вертикальный */
+  .rsvp-bg-texture {
+    position: absolute !important;
+    top: 8px !important;
+    left: 8px !important;
+    right: 8px !important;
+    bottom: auto !important;
+    width: calc(100% - 16px) !important;
+    height: calc(100% + 42px) !important;
+    object-fit: fill !important;
+    z-index: 0 !important;
+  }
+
+  /* Цветок ставим на край листа, не поверх заголовка */
+  .rsvp-left-flower {
+    left: 6px !important;
+    top: 22px !important;
+    width: 88px !important;
+    height: auto !important;
+    z-index: 4 !important;
+  }
+
+  .rsvp-main {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .rsvp-main .block-title {
+    margin: 0 0 26px 56px !important;
+    font-size: 36px !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0.09em !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+
+  /* Форма строго в одну колонку */
+  .rsvp-form {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 8px !important;
+  }
+
+  .rsvp-field,
+  .rsvp-field-wide {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+  }
+
+  .rsvp-field > span {
+    white-space: normal !important;
+    margin-bottom: 7px !important;
+  }
+
+  .rsvp-line-input {
+    width: 100% !important;
+    max-width: none !important;
+    height: 28px !important;
+    font-size: 17px !important;
+  }
+
+  .rsvp-options {
+    display: flex !important;
+    gap: 24px !important;
+    margin-top: 4px !important;
+  }
+
+  .rsvp-options label,
+  .rsvp-checkbox-option {
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+  }
+
+  .rsvp-options input,
+  .rsvp-checkbox-option input {
+    width: 16px !important;
+    height: 16px !important;
+    flex: 0 0 auto !important;
+  }
+
+  /* Алкогольный блок на мобилке — в одну колонку */
+  .rsvp-alcohol-accordion {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    max-width: none !important;
+    margin-top: 8px !important;
+  }
+
+  .rsvp-alcohol-group summary {
+    font-size: 17px !important;
+    padding: 2px 0 !important;
+  }
+
+  .rsvp-alcohol-options {
+    gap: 7px !important;
+    padding-top: 8px !important;
+  }
+
+  .rsvp-no-alcohol-option {
+    padding-top: 8px !important;
+  }
+
+  /* Поле сообщения организаторам должно быть внутри листа */
+  .rsvp-form .rsvp-field:last-child {
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+
+  .rsvp-form .rsvp-field:last-child .rsvp-line-input {
+    max-width: none !important;
+    height: 30px !important;
+  }
+
+  /* Стикер отправки — ниже формы, отдельной карточкой */
+  .rsvp-submit-card.rsvp-submit-card-with-texture {
+    position: relative !important;
+    z-index: 3 !important;
+    width: min(100%, 300px) !important;
+    min-height: 310px !important;
+    margin: 8px auto 0 !important;
+    justify-self: center !important;
+    align-self: center !important;
+  }
+
+  .rsvp-submit-sticker {
+    inset: -24px !important;
+    width: calc(100% + 28px) !important;
+    height: calc(100% + 28px) !important;
+    object-fit: contain !important;
+  }
+
+  .rsvp-submit-content {
+    min-height: 310px !important;
+    padding: 58px 34px 38px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .rsvp-submit-card p {
+    max-width: 210px !important;
+    font-size: 16px !important;
+    line-height: 1.38 !important;
+  }
+
+  .rsvp-card-divider {
+    width: 170px !important;
+    margin: 18px auto 20px !important;
+  }
+
+  .rsvp-submit {
+    width: 78% !important;
+    max-width: 180px !important;
+    padding: 11px 12px !important;
+    font-size: 13px !important;
+    letter-spacing: 0.04em !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* сам блок чуть шире и компактнее */
+  .rsvp-block.rsvp-block-with-texture {
+    padding: 44px 22px 52px !important;
+  }
+
+  /* расширяем лист и поднимаем его выше */
+  .rsvp-bg-texture {
+    top: -160px !important;
+    left: -20 !important;
+    right: -40 !important;
+    width: 115% !important;
+    height: calc(100% + 74px) !important;
+    object-fit: fill !important;
+  }
+
+  /* заголовок делаем меньше, чтобы точно был в одну строку */
+  .rsvp-main .block-title {
+    margin: 0 0 18px 48px !important;
+    font-size: 31px !important;
+    line-height: 0.95 !important;
+    letter-spacing: 0.05em !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+  }
+
+  /* цветок чуть ближе к листу */
+  .rsvp-left-flower {
+    left: 2px !important;
+    top: -16px !important;
+    width: 82px !important;
+  }
+
+  /* меньше внутренние боковые отступы у формы */
+  .rsvp-form {
+    padding: 0 1px !important;
+  }
+
+  /* имя + поле чуть ближе друг к другу */
+  .rsvp-field:first-child > span {
+    margin-bottom: 4px !important;
+  }
+
+  .rsvp-line-input {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* MOBILE: contacts block adaptation */
+
+@media (max-width: 768px) {
+  .contacts-section.landing-section {
+    padding-top: 28px !important;
+    padding-bottom: 44px !important;
+  }
+
+  .contacts-block {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    text-align: center !important;
+    gap: 22px !important;
+    padding: 0 18px !important;
+    overflow: visible !important;
+  }
+
+  /* Цветок делаем декоративным, а не главным объектом */
+  .contacts-decor {
+    width: 170px !important;
+    height: 190px !important;
+    margin: 0 auto -8px !important;
+    transform: none !important;
+  }
+
+  .contacts-decor .flower-big-left {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 170px !important;
+    height: 190px !important;
+    margin: 0 auto !important;
+  }
+
+  .contacts-decor .flower-big-left .flower-sticker-image {
+    width: 150px !important;
+    height: 180px !important;
+    object-fit: contain !important;
+    transform: rotate(-5deg) scaleX(-1) !important;
+  }
+
+  /* Заголовок уменьшаем, чтобы не обрезался */
+  .contacts-copy {
+    width: 100% !important;
+    max-width: 340px !important;
+    text-align: center !important;
+  }
+
+  .contacts-copy .block-title {
+    font-size: 38px !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0.055em !important;
+    white-space: normal !important;
+    text-align: center !important;
+    margin: 0 0 18px !important;
+  }
+
+  .contacts-copy p {
+    max-width: 310px !important;
+    margin: 0 auto !important;
+    font-size: 17px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Карточка контактов компактнее и по центру */
+  .contacts-card {
+    width: min(100%, 320px) !important;
+    min-width: 0 !important;
+    padding: 30px 28px 32px !important;
+    margin: 10px auto 0 !important;
+    text-align: center !important;
+  }
+
+  .contacts-card::after {
+    left: 50% !important;
+    top: -14px !important;
+    width: 30px !important;
+    height: 30px !important;
+    transform: translateX(-50%) rotate(3deg) !important;
+  }
+
+  .contacts-agency {
+    font-size: 27px !important;
+    line-height: 1 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .contacts-list {
+    gap: 12px !important;
+  }
+
+  .contacts-name {
+    font-size: 20px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .contacts-phone {
+    font-size: 21px !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.045em !important;
+  }
+}
+
+/* MOBILE: simplify contacts block */
+
+@media (max-width: 768px) {
+  /* Поднимаем контакты выше */
+  .contacts-section.landing-section {
+    padding-top: 0px !important;
+    padding-bottom: 26px !important;
+  }
+
+  /* Убираем цветок только на мобильной версии */
+  .contacts-decor {
+    display: none !important;
+  }
+
+  /* Компенсируем исчезновение цветка */
+  .contacts-block {
+    gap: 18px !important;
+    padding-top: 0 !important;
+  }
+
+  .contacts-copy {
+    margin-top: 0 !important;
+  }
+
+  .contacts-copy .block-title {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .contacts-card {
+    margin-top: 4px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .rsvp-section.landing-section {
+    padding-bottom: 0px !important;
+  }
+}
+
+/* MOBILE: move intro letter flower slightly right */
+
+@media (max-width: 768px) {
+  .letter-block .flower-small-right {
+    right: -54px !important;
+    bottom: -50px !important;
+  }
+}
+
+.rsvp-submit-error {
+  margin-top: 12px !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+  color: #9f4256 !important;
+  text-align: center !important;
+}
