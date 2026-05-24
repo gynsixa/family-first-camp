@@ -43,6 +43,11 @@ const dressTiles = [
     label: "Молочная ткань",
     src: "/assets/dress-code/light-fabric.png",
   },
+    {
+    className: "tile-cocoa",
+    label: "Какао",
+    src: "/assets/dress-code/cocoa.png",
+  },
 ];
 
 export function DressCodeBlock() {

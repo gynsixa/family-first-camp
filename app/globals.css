@@ -6847,3 +6847,73 @@ body {
   line-height: 1.55 !important;
   text-align: center !important;
 }
+
+/* Dress-code moodboard: 9 tiles layout */
+
+.dress-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-rows: repeat(3, 1fr) !important;
+  gap: 6px !important;
+}
+
+.dress-tile {
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+}
+
+.dress-tile img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Новый квадрат какао */
+.dress-tile.tile-cocoa {
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+/* Dress-code palette: 9 colors in one row */
+
+.dress-moodboard-panel .palette-row,
+.palette-row {
+  display: grid !important;
+  grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+  width: 112% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  align-items: start !important;
+}
+
+.dress-moodboard-panel .palette-item,
+.palette-item {
+  min-width: 0 !important;
+  text-align: center !important;
+}
+
+.dress-moodboard-panel .palette-dot,
+.palette-dot {
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0 auto 6px !important;
+  border-radius: 999px !important;
+}
+
+.dress-moodboard-panel .palette-label,
+.palette-label {
+  font-size: 11px !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0 !important;
+  max-width: 54px !important;
+  margin: 0 auto !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* Чтобы длинные подписи не раздували ряд */
+.palette-label {
+  word-break: normal !important;
+}
