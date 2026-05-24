@@ -6763,3 +6763,87 @@ body {
   color: #9f4256 !important;
   text-align: center !important;
 }
+
+/* Intro block: leave only centered letter */
+
+.intro-section.landing-section {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+  padding-top: 44px !important;
+  padding-bottom: 44px !important;
+}
+
+/* Убираем правый блок "Мы очень ждём вас" */
+.intro-info {
+  display: none !important;
+}
+
+/* Центрируем письмо */
+.intro-letter {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Само письмо */
+.intro-letter .paper-note,
+.intro-letter .paper-note-with-texture {
+  margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  .intro-section.landing-section {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .intro-info {
+    display: none !important;
+  }
+
+  .intro-letter {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Intro centered letter flower fix */
+
+.intro-letter .paper-note,
+.intro-letter .paper-note-with-texture {
+  position: relative !important;
+}
+
+/* Возвращаем цветок на правый нижний край письма */
+.intro-letter .flower-small-right {
+  right: 230px !important;
+  bottom: -50px !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  z-index: 8 !important;
+}
+
+/* Dress-code top text width fix */
+
+.dress-header {
+  max-width: 860px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+.dress-header .block-subtitle {
+  max-width: 960px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  text-align: center !important;
+}
