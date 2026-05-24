@@ -16,7 +16,7 @@ export function LocationBlock() {
         </p>
 
         <div className="location-coords-card">
-          <span>Парк-отель Green Land</span>
+          <span>База отдыха Green Land</span>
           <strong>{location.navigator}</strong>
         </div>
 

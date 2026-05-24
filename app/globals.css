@@ -6917,3 +6917,605 @@ body {
 .palette-label {
   word-break: normal !important;
 }
+
+/* Dress-code outfit references image */
+
+.dress-outfit-refs-panel {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.outfit-refs-placeholder {
+  display: none !important;
+}
+
+.outfit-refs-image {
+  display: block !important;
+  width: auto !important;
+  height: min(100%, 806px) !important;
+  max-height: 806px !important;
+  max-width: 100% !important;
+  margin-right: -9% !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 14px 22px rgba(56, 38, 28, 0.12));
+}
+
+@media (max-width: 768px) {
+  .dress-outfit-refs-panel {
+    width: 100% !important;
+    margin-top: 24px !important;
+  }
+
+  .outfit-refs-image {
+    width: min(100%, 320px) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Dress-code flower position after outfit refs image */
+
+.dress-code-block .flower-top-right {
+  right: 270px !important;
+  top: 300px !important;
+  transform: rotate(4deg) !important;
+  z-index: 6 !important;
+}
+
+/* Dress-code rules under palette */
+
+.dress-copy.dress-rules {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+  margin-top: 14px !important;
+  width: 138% !important;
+  margin-left: -9% !important;
+  margin-right: -9% !important;
+  text-align: left !important;
+}
+
+.dress-rule {
+  position: relative !important;
+  padding: 10px 14px 10px 16px !important;
+  border-radius: 0 !important;
+  border-left: 3px solid transparent !important;
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+}
+
+.dress-rule-allowed {
+  background: rgba(225, 231, 204, 0.42) !important;
+  border-left-color: #7a8247 !important;
+}
+
+.dress-rule-avoid {
+  background: rgba(236, 205, 200, 0.42) !important;
+  border-left-color: #a85a61 !important;
+}
+
+.dress-rule-label {
+  display: block !important;
+  margin-bottom: 4px !important;
+  font-family: var(--font-heading), Georgia, serif !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.dress-rule-allowed .dress-rule-label {
+  color: #65713e !important;
+}
+
+.dress-rule-avoid .dress-rule-label {
+  color: #9a555f !important;
+}
+
+.dress-rule p {
+  margin: 0 !important;
+  font-size: 13px !important;
+  line-height: 1.38 !important;
+  color: #4b4037 !important;
+}
+
+/* старый мини-разделитель в dress-code больше не нужен */
+.dress-palette-zone .dress-mini-divider {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .dress-copy.dress-rules {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 16px !important;
+  }
+
+  .dress-rule {
+    padding: 10px 12px !important;
+  }
+
+  .dress-rule p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Dress-code: widen rules mostly to the right */
+
+.dress-palette-zone {
+  width: 126% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: -36% !important;
+  overflow: visible !important;
+}
+
+.dress-copy.dress-rules {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 14px 0 0 !important;
+  transform: none !important;
+}
+
+.dress-rule {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Dress-code: move/enlarge only the 9 moodboard tiles */
+
+.dress-moodboard-panel .dress-grid {
+  width: 112% !important;
+  margin-left: 30px !important;
+  margin-right: 0 !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 7px !important;
+  transform: translateY(-23px) !important;
+}
+
+/* сами карточки внутри сетки */
+.dress-moodboard-panel .dress-tile {
+  aspect-ratio: 1 / 1 !important;
+}
+
+/* картинки внутри карточек */
+.dress-moodboard-panel .dress-tile img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Important information block — widen actual WishesBlock */
+
+.location-wishes-section .wishes-block,
+.wishes-block {
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.location-wishes-section .wishes-copy-card,
+.wishes-block .wishes-copy-card {
+  width: 1000px !important;
+  max-width: 1000px !important;
+  min-width: 1000px !important;
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 64px !important;
+  padding-right: 64px !important;
+}
+
+.location-wishes-section .wishes-text,
+.wishes-block .wishes-text {
+  width: 100% !important;
+  max-width: 8500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.location-wishes-section .wishes-text p,
+.wishes-block .wishes-text p {
+  max-width: none !important;
+}
+
+@media (max-width: 768px) {
+  .location-wishes-section .wishes-copy-card,
+  .wishes-block .wishes-copy-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .location-wishes-section .wishes-text,
+  .wishes-block .wishes-text {
+    max-width: 100% !important;
+  }
+}
+
+.notebook-with-texture .notebook-title {
+  font-size: 34px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  margin-left: -160px !important;
+  margin-top: 10px !important;
+}
+
+/* Contacts description width */
+
+.contacts-copy p {
+  max-width: 560px !important;
+  width: 560px !important;
+  margin-left: -20px !important;
+  margin-right: 0 !important;
+}
+
+/* MOBILE: fix intro letter flower position */
+
+@media (max-width: 768px) {
+  .intro-letter .flower-small-right,
+  .letter-block .flower-small-right {
+    right: -55px !important;
+    left: auto !important;
+    bottom: -82px !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: 10 !important;
+  }
+}
+
+/* MOBILE FIX: dress-code layout reset */
+
+@media (max-width: 768px) {
+  .dress-section.landing-section {
+    padding-top: 28px !important;
+    padding-bottom: 34px !important;
+    overflow: hidden !important;
+  }
+
+  .dress-code-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    padding: 0 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  .dress-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 24px !important;
+    text-align: center !important;
+  }
+
+  .dress-header .block-subtitle {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    font-size: 17px !important;
+    line-height: 1.55 !important;
+  }
+
+  .dress-visual-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .dress-moodboard-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  /* Сбрасываем десктопное увеличение/сдвиг 9 карточек */
+  .dress-moodboard-panel .dress-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transform: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 5px !important;
+  }
+
+  .dress-moodboard-panel .dress-tile {
+    width: auto !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
+  }
+
+  .dress-moodboard-panel .dress-tile img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* Палитра: 9 цветов не в одну строку на мобилке, а аккуратно в 3×3 */
+  .dress-palette-zone {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: visible !important;
+  }
+
+  .dress-moodboard-panel .palette-row,
+  .palette-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px 10px !important;
+    width: 100% !important;
+    max-width: 260px !important;
+    margin: 22px auto 0 !important;
+  }
+
+  .dress-moodboard-panel .palette-dot,
+  .palette-dot {
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 auto 6px !important;
+  }
+
+  .dress-moodboard-panel .palette-label,
+  .palette-label {
+    font-size: 10px !important;
+    line-height: 1.1 !important;
+    max-width: 72px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Важная информация под палитрой */
+  .dress-copy.dress-rules {
+    width: 120% !important;
+    max-width: 120% !important;
+    margin: 18px 0 0 !important;
+    margin-left: -20px !important;
+    transform: none !important;
+  }
+
+  .dress-rule {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .dress-rule p {
+    font-size: 12px !important;
+    line-height: 1.42 !important;
+  }
+
+  /* Референсы образов ниже, не рядом */
+  .dress-outfit-refs-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 8px auto 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  .outfit-refs-image {
+    width: min(100%, 320px) !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Цветок в dress-code на мобилке лучше убрать, он сейчас мешает сетке */
+  .dress-code-block .flower-top-right {
+    display: none !important;
+  }
+}
+
+/* MOBILE: timing block title + fix notebook date */
+
+@media (max-width: 768px) {
+  /* Заголовок всего блока */
+  .timing-block::before {
+    content: "План мероприятия";
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    margin: 0 auto 18px !important;
+    text-align: center !important;
+
+    font-family: var(--font-heading), Georgia, serif !important;
+    font-size: 32px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: #536043 !important;
+  }
+
+  /* Сам блок тайминга: чуть компактнее после заголовка */
+  .timing-block {
+    gap: 28px !important;
+  }
+
+  /* Возвращаем "24 июля" в центр листа */
+  .notebook-with-texture .notebook-title {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto 18px !important;
+    padding: 0 !important;
+    text-align: center !important;
+
+    font-size: 25px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.06em !important;
+    transform: none !important;
+  }
+
+  /* Убираем перекос от внутренних отступов листа */
+  .notebook-with-texture .notebook-inner {
+    padding: 42px 38px 42px 62px !important;
+  }
+
+  /* Список оставляем читаемым */
+  .notebook-with-texture .timeline-list {
+    margin-top: 0 !important;
+  }
+}
+
+/* MOBILE: compact timing section */
+
+@media (max-width: 768px) {
+  /* Меньше воздуха вокруг заголовка "План мероприятия" */
+  .timing-block::before {
+    margin: 0 auto 8px !important;
+    font-size: 34px !important;
+    line-height: 1 !important;
+  }
+
+  /* Меньше расстояние между заголовком, 24 июля и 25 июля */
+  .timing-block {
+    gap: 18px !important;
+  }
+
+  /* Уменьшаем вертикальные отступы самой секции */
+  .timing-section.landing-section {
+    padding-top: 12px !important;
+    padding-bottom: 16px !important;
+  }
+
+  /* Лист 24 июля — ниже высота, меньше пустого низа */
+  .notebook.notebook-with-texture {
+    width: min(100%, 390px) !important;
+    min-height: 270px !important;
+    height: auto !important;
+  }
+
+  .notebook-with-texture .notebook-texture-image {
+    top: -14px !important;
+    left: -16px !important;
+    width: calc(100% + 32px) !important;
+    height: calc(100% + 28px) !important;
+    object-fit: fill !important;
+  }
+
+  .notebook-with-texture .notebook-inner {
+    padding: 34px 38px 30px 62px !important;
+  }
+
+  .notebook-with-texture .notebook-title {
+    margin-bottom: 12px !important;
+    font-size: 30px !important;
+  }
+
+  .notebook-with-texture .timeline-list {
+    gap: 5px !important;
+  }
+
+  .notebook-with-texture .timeline-item {
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  .notebook-with-texture .timeline-time {
+    font-size: 19px !important;
+  }
+
+  /* Лист 25 июля — меньше пустого пространства снизу */
+  .weekend-note.weekend-note-with-texture {
+    width: min(100%, 350px) !important;
+    max-width: 350px !important;
+    min-height: 300px !important;
+    height: auto !important;
+    margin-top: 0 !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-texture-image {
+    top: -16px !important;
+    left: -16px !important;
+    width: calc(100% + 32px) !important;
+    height: calc(100% + 36px) !important;
+    object-fit: fill !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-inner {
+    padding: 42px 34px 34px !important;
+  }
+
+  .weekend-note-with-texture .weekend-kicker {
+    font-size: 30px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .weekend-note-with-texture p {
+    font-size: 18px !important;
+    line-height: 1.34 !important;
+  }
+
+  .weekend-note-with-texture .weekend-small-note {
+    font-size: 16px !important;
+    line-height: 1.32 !important;
+    margin-top: 14px !important;
+  }
+}
+
+/* MOBILE: move weekend pin lower */
+
+@media (max-width: 768px) {
+  .weekend-note.weekend-note-with-texture::after {
+    top: 9px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .location-block .block-title {
+    font-size: 34px !important;
+    line-height: 0.95 !important;
+    letter-spacing: 0.075em !important;
+  }
+}
+
+/* MOBILE: fix contacts text width */
+
+@media (max-width: 768px) {
+  .contacts-copy {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    overflow: visible !important;
+  }
+
+  .contacts-copy p {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    text-align: center !important;
+
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .rsvp-section.landing-section {
+    padding-bottom: -10px !important;
+  }
+}

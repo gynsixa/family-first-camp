@@ -92,27 +92,34 @@ export function DressCodeBlock() {
               ))}
             </div>
 
-            <div className="dress-copy">
-              <div>{dressCode.baseText}</div>
-              <div>{dressCode.accentText}</div>
-            </div>
+            <div className="dress-copy dress-rules">
+              <div className="dress-rule dress-rule-allowed">
+                <span className="dress-rule-label">Можно</span>
+                  <p>
+                    Выбирайте светлые, свежие и тёплые оттенки: молочный, сливочный,
+                    крем-брюле, светлый бежевый, пудрово-розовый, нежно-персиковый,
+                    сливочно-жёлтый, небесно-голубой и мягкий шалфейный.
+                  </p>
+                </div>
 
-            <div className="decor-divider dress-mini-divider">
-              <span>◇</span>
-            </div>
-
-            <div className="dress-footer">{dressCode.footerText}</div>
+                <div className="dress-rule dress-rule-avoid">
+                  <span className="dress-rule-label">Лучше избегать</span>
+                    <p>
+                      Чёрного, ярко-красного, кислотных цветов, тёмно-зелёного, насыщенного
+                      оранжевого и тяжёлого коричневого. Белый допустим, но лучше выбирать не
+                      кипенно-белый, а молочный, цвет слоновой кости или тёплый сливочный.
+                    </p>
+                  </div>
+                </div>
           </div>
         </div>
 
         <div className="dress-outfit-refs-panel dress-anim-reference">
-          <div className="outfit-refs-placeholder">
-            <h3>Референсы образов</h3>
-            <p>
-              Здесь позже добавим реальные примеры одежды, тканей и силуэтов
-              в выбранной палитре.
-            </p>
-          </div>
+          <img
+            className="outfit-refs-image"
+            src="/assets/dress-code/outfit-refs.png"
+            alt="Референсы образов в палитре дресс-кода"
+          />
         </div>
       </div>
     </section>

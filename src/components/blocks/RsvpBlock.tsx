@@ -21,10 +21,6 @@ const alcoholGroups = [
     title: "Крепкий алкоголь",
     options: ["Водка", "Виски", "Джин", "Ром", "Текила", "Коньяк"],
   },
-  {
-    title: "Сидр",
-    options: ["Сухой", "Полусладкий"],
-  },
 ];
 
 export function RsvpBlock() {
@@ -51,7 +47,6 @@ export function RsvpBlock() {
       transfer: String(formData.get("transfer") || ""),
       food: String(formData.get("food") || "").trim(),
       alcohol: formData.getAll("alcohol").map(String),
-      organizerNote: String(formData.get("organizerNote") || "").trim(),
     };
 
     if (!payload.name) {
@@ -185,14 +180,6 @@ export function RsvpBlock() {
             </div>
           </div>
 
-          <label className="rsvp-field rsvp-field-wide">
-            <span>Сюрприз или сообщение организаторам</span>
-            <input
-              className="rsvp-line-input"
-              type="text"
-              name="organizerNote"
-            />
-          </label>
         </form>
       </div>
 
@@ -205,7 +192,7 @@ export function RsvpBlock() {
         />
 
         <div className="rsvp-submit-content">
-          <p>Будем благодарны, если вы подтвердите своё участие до 1 июня.</p>
+          <p>Будем благодарны, если вы подтвердите своё участие <br></br>до 1 июня.</p>
 
           <div className="rsvp-card-divider">
             <span>♡</span>
