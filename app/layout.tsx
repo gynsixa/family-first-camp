@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Cormorant_Infant, Forum, Marck_Script, Caveat } fro
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Family First Camp",
+  title: "Миша и Настя. 24 июля",
   description: "Wedding invitation",
 };
 
