@@ -7519,3 +7519,38 @@ body {
     padding-bottom: -10px !important;
   }
 }
+
+/* MOBILE: stretch timing notes a bit lower + lower weekend pin */
+
+@media (max-width: 768px) {
+  /* Лист 24 июля — чуть больше вниз */
+  .notebook.notebook-with-texture {
+    min-height: 292px !important;
+  }
+
+  .notebook-with-texture .notebook-texture-image {
+    height: calc(100% + 46px) !important;
+  }
+
+  .notebook-with-texture .notebook-inner {
+    padding-bottom: 42px !important;
+  }
+
+  /* Лист 25 июля — чуть больше вниз */
+  .weekend-note.weekend-note-with-texture {
+    min-height: 330px !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-texture-image {
+    height: calc(100% + 62px) !important;
+  }
+
+  .weekend-note-with-texture .weekend-note-inner {
+    padding-bottom: 48px !important;
+  }
+
+  /* Пин 25 июля — ниже */
+  .weekend-note.weekend-note-with-texture::after {
+    top: 18px !important;
+  }
+}
