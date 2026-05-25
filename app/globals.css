@@ -7288,8 +7288,8 @@ body {
 
   /* Важная информация под палитрой */
   .dress-copy.dress-rules {
-    width: 120% !important;
-    max-width: 120% !important;
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 18px 0 0 !important;
     margin-left: -20px !important;
     transform: none !important;
@@ -7552,5 +7552,57 @@ body {
   /* Пин 25 июля — ниже */
   .weekend-note.weekend-note-with-texture::after {
     top: 18px !important;
+  }
+}
+
+/* DESKTOP: move intro letter flower left */
+
+@media (min-width: 769px) {
+  .intro-letter .flower-small-right,
+  .letter-block .flower-small-right {
+    right: 300px !important;
+    left: auto !important;
+    bottom: -50px !important;
+    top: auto !important;
+  }
+}
+
+/* Dress-code note text under palette */
+
+.dress-note-text {
+  width: 100% !important;
+  max-width: 760px !important;
+  margin: 18px auto 0 !important;
+  padding: 0 !important;
+
+  font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  text-align: center !important;
+  color: #4b4037 !important;
+
+  background: transparent !important;
+  border: none !important;
+  transform: none !important;
+}
+
+/* Hide old rules if they still exist somewhere */
+.dress-rules,
+.dress-rule,
+.dress-rule-allowed,
+.dress-rule-avoid {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Dress-code outfit refs: smaller on desktop */
+
+@media (min-width: 769px) {
+  .outfit-refs-image {
+    height: 730px !important;
+    max-height: 730px !important;
+    width: auto !important;
   }
 }
