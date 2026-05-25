@@ -1836,9 +1836,9 @@ textarea {
 
 .wishes-copy-card .wishes-text {
   max-width: 640px;
-  margin: 24px auto 0;
+  margin: 14px auto 0;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -7116,8 +7116,8 @@ body {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    padding-left: 22px !important;
-    padding-right: 22px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
   .location-wishes-section .wishes-text,
@@ -7182,10 +7182,11 @@ body {
   }
 
   .dress-header .block-subtitle {
-    width: 100% !important;
+    width: 120% !important;
     max-width: 320px !important;
-    margin: 0 auto !important;
-    font-size: 17px !important;
+    margin: 17 auto !important;
+    margin-left: -12px !important;
+    font-size: 16px !important;
     line-height: 1.55 !important;
   }
 
@@ -7367,7 +7368,7 @@ body {
 @media (max-width: 768px) {
   /* Меньше воздуха вокруг заголовка "План мероприятия" */
   .timing-block::before {
-    margin: 0 auto 8px !important;
+    margin: 0 auto 0px !important;
     font-size: 34px !important;
     line-height: 1 !important;
   }
@@ -7379,13 +7380,14 @@ body {
 
   /* Уменьшаем вертикальные отступы самой секции */
   .timing-section.landing-section {
-    padding-top: 12px !important;
-    padding-bottom: 16px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
   }
 
   /* Лист 24 июля — ниже высота, меньше пустого низа */
   .notebook.notebook-with-texture {
     width: min(100%, 390px) !important;
+    padding-top: 6px !important;
     min-height: 270px !important;
     height: auto !important;
   }
@@ -7508,11 +7510,11 @@ body {
 @media (max-width: 768px) {
   /* Лист 24 июля — чуть больше вниз */
   .notebook.notebook-with-texture {
-    min-height: 278px !important;
+    min-height: 220px !important;
   }
 
   .notebook-with-texture .notebook-texture-image {
-    height: calc(100% + 46px) !important;
+    height: calc(100% + 40px) !important;
   }
 
   .notebook-with-texture .notebook-inner {
@@ -7521,11 +7523,11 @@ body {
 
   /* Лист 25 июля — чуть больше вниз */
   .weekend-note.weekend-note-with-texture {
-    min-height: 315px !important;
+    min-height: 260px !important;
   }
 
   .weekend-note-with-texture .weekend-note-texture-image {
-    height: calc(100% + 62px) !important;
+    height: calc(100% + 32px) !important;
   }
 
   .weekend-note-with-texture .weekend-note-inner {
@@ -7553,17 +7555,18 @@ body {
 /* Dress-code note text under palette */
 
 .dress-note-text {
-  width: 100% !important;
+  width: 110% !important;
   max-width: 760px !important;
-  margin: 18px auto 0 !important;
+  margin: 0px auto 0 !important;
   padding: 0 !important;
 
   font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
-  font-size: 17px !important;
+  font-size: 16px !important;
   line-height: 1.55 !important;
   font-style: italic !important;
   font-weight: 400 !important;
   text-align: center !important;
+  margin-left: -20px !important;
   color: #4b4037 !important;
 
   background: transparent !important;
