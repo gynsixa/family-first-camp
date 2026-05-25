@@ -7642,3 +7642,232 @@ body {
   }
 }
 
+/* DESKTOP: dress-code layout — outfit refs left, palette + text right */
+
+@media (min-width: 769px) {
+  .dress-visual-row {
+    display: grid !important;
+    grid-template-columns: 430px 360px !important;
+    gap: 70px !important;
+    align-items: start !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 960px !important;
+    margin: 42px auto 0 !important;
+  }
+
+  /* Левая колонка: референсы одежды */
+  .dress-outfit-refs-panel {
+    grid-column: 1 !important;
+    width: 430px !important;
+    max-width: 430px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    background: transparent !important;
+    border: none !important;
+    transform: none !important;
+  }
+
+  .outfit-refs-image {
+    width: 430px !important;
+    height: auto !important;
+    max-width: 430px !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
+    filter: none !important;
+  }
+
+  /* Правая колонка: палитра + текст */
+  .dress-palette-zone.dress-palette-after-refs {
+    grid-column: 2 !important;
+    width: 360px !important;
+    max-width: 360px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    transform: none !important;
+  }
+
+  /* Палитра 3 × 3 */
+  .dress-palette-after-refs .palette-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 44px 40px !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    margin-left: 20px !important;
+    align-items: start !important;
+  }
+
+  .dress-palette-after-refs .palette-item {
+    min-width: 0 !important;
+    text-align: center !important;
+  }
+
+  .dress-palette-after-refs .palette-dot {
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 auto 12px !important;
+    border-radius: 999px !important;
+  }
+
+  .dress-palette-after-refs .palette-label {
+    font-size: 16px !important;
+    line-height: 1.15 !important;
+    max-width: 100px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Текст под палитрой — как верхний поясняющий текст */
+  .dress-note-after-refs {
+    width: 120% !important;
+    max-width: 400px !important;
+    margin: 60px auto 0 !important;
+    padding: 0 !important;
+
+    font-family: var(--font-body), Georgia, "Times New Roman", serif !important;
+    font-size: 18px !important;
+    line-height: 1.75 !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    color: #4b4037 !important;
+
+    background: transparent !important;
+    border: none !important;
+    transform: none !important;
+  }
+
+  /* Старый левый moodboard, если остался в DOM */
+  .dress-moodboard-panel {
+    display: none !important;
+  }
+}
+
+/* DESKTOP: move dress-code flower left */
+
+@media (min-width: 769px) {
+  .dress-code-block .flower-top-right,
+  .dress-visual-row .flower-top-right,
+  .dress-code-block .flower-small-right {
+    right: auto !important;
+    left: 18% !important;
+    top: 280px !important;
+    transform: translateX(-50%) rotate(4deg) !important;
+    z-index: 8 !important;
+  }
+}
+
+/* DESKTOP: improve 25 July / weekend note typography */
+
+@media (min-width: 769px) {
+  .weekend-note-with-texture .weekend-note-inner {
+    padding: 42px 54px 38px !important;
+  }
+
+  .weekend-note-with-texture .weekend-kicker {
+    margin-bottom: 40px !important;
+    transform: translateX(22px) !important;
+  }
+
+  .weekend-note-with-texture p {
+    max-width: 390px !important;
+    font-size: 18px !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .weekend-note-with-texture .weekend-small-note {
+    max-width: 390px !important;
+    margin-top: 22px !important;
+    font-size: 16px !important;
+    line-height: 1.42 !important;
+    text-align: left !important;
+  }
+}
+
+/* DESKTOP: center 25 July title inside weekend note */
+
+@media (min-width: 769px) {
+  .weekend-note-with-texture .weekend-kicker,
+  .weekend-note .weekend-kicker,
+  .weekend-note h2,
+  .weekend-note h3 {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 22px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+    transform: none !important;
+  }
+}
+
+/* DESKTOP: widen and enlarge wishes / important moments block */
+
+@media (min-width: 769px) {
+  .wishes-block {
+    width: 100% !important;
+    max-width: none !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .wishes-copy-card {
+    width: 1100px !important;
+    max-width: 1100px !important;
+    min-width: 1100px !important;
+    padding: 28px 86px 52px !important;
+    box-sizing: border-box !important;
+  }
+
+  .wishes-copy-card .block-title {
+    font-size: 44px !important;
+    line-height: 1 !important;
+    margin-bottom: 26px !important;
+  }
+
+  .wishes-text {
+    width: 110% !important;
+    max-width: 920px !important;
+    margin: 0 auto !important;
+  }
+
+  .wishes-text p {
+    max-width: 920px !important;
+    font-size: 19px !important;
+    line-height: 1.55 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .wishes-text p + p {
+    margin-top: 15px !important;
+  }
+}
+
+/* MOBILE: reduce gap between outfit refs and palette */
+
+@media (max-width: 768px) {
+  .dress-palette-after-refs {
+    margin-top: 8px !important;
+  }
+
+  .dress-palette-after-refs .palette-row {
+    margin-top: 0 !important;
+  }
+}

@@ -66,19 +66,6 @@ export function DressCodeBlock() {
       </div>
 
       <div className="dress-visual-row">
-        <div className="dress-moodboard-panel dress-anim-moodboard">
-          <div className="dress-grid">
-            {dressTiles.map((tile) => (
-              <div
-                key={tile.label}
-                className={`dress-tile ${tile.className}`}
-                aria-label={tile.label}
-              >
-                <img src={tile.src} alt={tile.label} />
-              </div>
-            ))}
-          </div>
-
         <div className="dress-outfit-refs-panel dress-anim-reference">
           <img
             className="outfit-refs-image"
@@ -87,27 +74,26 @@ export function DressCodeBlock() {
           />
         </div>
 
-        <div className="dress-palette-zone dress-anim-palette">
-            <div className="palette-row">
-              {dressCode.palette.map((item) => (
-                <div className="palette-item" key={item.label}>
-                  <div
-                    className="palette-dot"
-                    style={{ backgroundColor: item.color }}
-                  />
-                  <div className="palette-label">{item.label}</div>
-                </div>
-              ))}
+        <div className="dress-palette-zone dress-anim-palette dress-palette-after-refs">
+          <div className="palette-row">
+            {dressCode.palette.map((item) => (
+              <div className="palette-item" key={item.label}>
+                <div
+                  className="palette-dot"
+                  style={{ backgroundColor: item.color }}
+                />
+              <div className="palette-label">{item.label}</div>
             </div>
-          </div>
+          ))}
         </div>
 
-        <div className="dress-copy dress-note-text">
+        <div className="dress-copy dress-note-text dress-note-after-refs">
               Лучше избегать чёрного, ярко-красного, кислотных цветов, тёмных пятен,
               и тяжёлого коричневого. <p></p> Хотим видеть вас в однотонных образах, <br></br>без ярких
               рисунков. <p></p> Белый допустим, но лучше выбирать не кипенно-белый, а молочный,
               цвет слоновой кости или тёплый сливочный.
         </div>
+      </div>
       </div>
     </section>
   );
