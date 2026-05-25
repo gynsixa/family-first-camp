@@ -3062,18 +3062,6 @@ textarea {
   opacity: 0.9;
 }
 
-.hero-doodle-wrap::before {
-  content: "family first camp";
-  position: absolute;
-  right: 8%;
-  bottom: 24px;
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(98, 89, 79, 0.62);
-}
-
 @media (max-width: 900px) {
   .hero-block {
     grid-template-columns: 1fr;
@@ -3094,12 +3082,6 @@ textarea {
     width: 78%;
   }
 
-  .hero-doodle-wrap::before {
-    right: 50%;
-    bottom: 0;
-    transform: translateX(50%);
-    white-space: nowrap;
-  }
 }
 
 /* Real paper texture for letter */
@@ -7358,7 +7340,8 @@ body {
   .notebook-with-texture .notebook-title {
     width: 100% !important;
     max-width: none !important;
-    margin: 0 auto 18px !important;
+    margin: 0 auto 20px !important;
+    margin-left: -20px !important;
     padding: 0 !important;
     text-align: center !important;
 
@@ -7606,3 +7589,53 @@ body {
     width: auto !important;
   }
 }
+
+/* Hide dress-code moodboard image grid */
+
+.dress-moodboard-panel .dress-grid {
+  display: none !important;
+}
+
+.dress-moodboard-panel {
+  padding-top: 0 !important;
+}
+
+.dress-palette-zone {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .dress-note-after-refs {
+    max-width: 320px !important;
+    margin-top: 22px !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dress-palette-after-refs {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 22px auto 0 !important;
+  }
+
+  .dress-palette-after-refs .palette-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px 12px !important;
+    max-width: 260px !important;
+  }
+
+  .dress-palette-after-refs .palette-dot {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .dress-palette-after-refs .palette-label {
+    font-size: 10px !important;
+    max-width: 72px !important;
+  }
+}
+

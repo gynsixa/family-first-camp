@@ -44,9 +44,6 @@ export function TimingNotebookBlock() {
        <div className="weekend-note-inner">
          <div className="weekend-kicker">25 июля</div>
          <p>{timing.secondDay}</p>
-         <div className="weekend-small-note">
-           Возьмите с собой лёгкую одежду, купальник, солнцезащитный крем и хорошее летнее настроение.
-         </div>
        </div>
       </div>
     </section>

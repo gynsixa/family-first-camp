@@ -79,7 +79,15 @@ export function DressCodeBlock() {
             ))}
           </div>
 
-          <div className="dress-palette-zone dress-anim-palette">
+        <div className="dress-outfit-refs-panel dress-anim-reference">
+          <img
+            className="outfit-refs-image"
+            src="/assets/dress-code/outfit-refs.png"
+            alt="Референсы образов в палитре дресс-кода"
+          />
+        </div>
+
+        <div className="dress-palette-zone dress-anim-palette">
             <div className="palette-row">
               {dressCode.palette.map((item) => (
                 <div className="palette-item" key={item.label}>
@@ -91,22 +99,14 @@ export function DressCodeBlock() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
 
-            <div className="dress-copy dress-note-text">
+        <div className="dress-copy dress-note-text">
               Лучше избегать чёрного, ярко-красного, кислотных цветов, тёмных пятен,
               насыщенного оранжевого и тяжёлого коричневого, однотонную одежду, без ярких
               рисунков. Белый допустим, но лучше выбирать не кипенно-белый, а молочный,
               цвет слоновой кости или тёплый сливочный.
-            </div>
-          </div>
-        </div>
-
-        <div className="dress-outfit-refs-panel dress-anim-reference">
-          <img
-            className="outfit-refs-image"
-            src="/assets/dress-code/outfit-refs.png"
-            alt="Референсы образов в палитре дресс-кода"
-          />
         </div>
       </div>
     </section>
