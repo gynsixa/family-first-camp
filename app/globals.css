@@ -7433,14 +7433,14 @@ body {
 
   .weekend-note-with-texture .weekend-note-texture-image {
     top: -16px !important;
-    left: -16px !important;
-    width: calc(100% + 32px) !important;
+    left: -30px !important;
+    width: calc(110% + 32px) !important;
     height: calc(100% + 36px) !important;
     object-fit: fill !important;
   }
 
   .weekend-note-with-texture .weekend-note-inner {
-    padding: 42px 34px 34px !important;
+    padding: 52px 34px 34px !important;
   }
 
   .weekend-note-with-texture .weekend-kicker {
@@ -7449,7 +7449,7 @@ body {
   }
 
   .weekend-note-with-texture p {
-    font-size: 18px !important;
+    font-size: 16px !important;
     line-height: 1.34 !important;
   }
 

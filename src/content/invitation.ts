@@ -26,6 +26,7 @@ export const invitation = {
       { label: "Абрикос", color: "#E39A61" },
       { label: "Лимонный", color: "#fdf9d3" },
       { label: "Небесный", color: "#C8DBEA" },
+      { label: "Лиловый", color: "#bab0d2" },
       { label: "Оливковый/ Фисташковый", color: "#d1d9b4" },
       { label: "Ягодный акцент", color: "#ea7891" },
       { label: "Светло-коричневый", color: "#9D7D70" },
