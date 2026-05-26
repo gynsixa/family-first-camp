@@ -107,7 +107,7 @@ export function RsvpBlock() {
           </label>
 
           <div className="rsvp-field">
-            <span>Приедете ли на уикенд?</span>
+            <span>Приедете ли на торжество?</span>
             <div className="rsvp-options">
               <label>
                 <input type="radio" name="attendance" value="Да" /> Да
