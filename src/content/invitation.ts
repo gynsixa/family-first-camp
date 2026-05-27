@@ -38,7 +38,7 @@ export const invitation = {
   timing: {
     title: "24 Июля",
     items: [
-      { time: "13:30", title: "Заселение" },
+      { time: "13:30-14:30", title: "Заселение" },
       { time: "15:00", title: "Фуршет" },
       { time: "16:00", title: "Церемония" },
       { time: "16:30", title: "Банкет" },
